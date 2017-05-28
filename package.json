@@ -1,0 +1,31 @@
+{
+  "name": "headlines",
+  "version": "1.0.0",
+  "description": "A modern rss feeds that allows you view headlines from different news sources",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tolupatrick004/headlines.git"
+  },
+  "author": "Duyiole Tolulope Patrick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tolupatrick004/headlines/issues"
+  },
+  "homepage": "https://github.com/tolupatrick004/headlines#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^2.6.1"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
