@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "start": "webpack-dev-server",
+    "build": "webpack-dev-server --inline --content-base ./src --hot "
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tolupatrick004/headlines.git"
   },
-  "author": "Duyiole Tolulope Patrick",
+  "author": "Duyile Tolulope Patrick",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tolupatrick004/headlines/issues"
@@ -22,10 +24,19 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "webpack": "^2.6.1"
+    "babel-preset-react-hmre": "^1.1.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1"
   }
 }

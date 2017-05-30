@@ -1,13 +1,18 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-  entry: 'src/js/app.js',
+  entry: './src/js/main.js',
   output: {
     path: __dirname,
-    filename: 'bundle.js'
+    filename: 'dist/bundle.js'
   },
-
+  devServer: {
+    publicPath: '/',
+    contentBase: './src',
+    historyApiFallback: true,
+    hot: true
+  },
   module: {
     loaders: [
       {
@@ -15,7 +20,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node-modules/,
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react', 'react-hmre']
         }
       }
     ]
