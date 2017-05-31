@@ -5,12 +5,11 @@ class Nav extends React.Component {
     return (
       <nav>
         <div className="nav-wrapper grey darken-3">
-          <a href="/" className="brand-logo" id="brand-size">
-            <span className="orange-text text-accent-1">HeadLines</span>
+          <a href="/" className="brand-logo">
+            <span className="orange-text text-accent-1">headlines</span>
           </a>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <ul id="nav-mobile" className="right hide-on-med-and-down orange-text text-accent-1">
             <li><a href="/login">Log In</a></li>
-            <li><a href="/signup">Sign Up</a></li>
           </ul>
         </div>{/*nav-wrapper*/}
       </nav>
