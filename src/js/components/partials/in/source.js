@@ -1,11 +1,21 @@
 import React from 'react';
 
-const Source = ({source}) => {
-  return(
-      <div className="col s12 m3">
-        <h6 className="header blue-text center-align">{source.name}</h6>
-        <a href="#">
-          <div className="card horizontal card hoverable grey darken-3">
+class Source extends React.Component {
+  constructor() {
+    super();
+    this.redirect = this.redirect.bind(this);
+  }
+
+  redirect(sourceName) {
+    return '/articles/' + sourceName;
+  }
+
+  render() {
+    let source = this.props.source;
+    return(
+        <div className="col s12 m3">
+          <h6 className="header blue-text center-align">{source.name}</h6>
+          <div className="card card hoverable grey darken-3" onClick={this.redirect(source.name)}>
             <div className="card-image">
               <img src="http://lorempixel.com/100/190/nature/6" />
             </div>
@@ -14,13 +24,13 @@ const Source = ({source}) => {
                 <p>{source.description}</p>
               </div>
               <div className="card-action">
-                <a href="#">View Articles</a>
+                <a href={this.redirect(source.name)}>View Articles</a>
               </div>
             </div>
           </div>
-        </a>
-      </div>
-  );
+        </div>
+    );
+  }
 }
 
 export default Source;

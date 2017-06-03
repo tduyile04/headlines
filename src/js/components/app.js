@@ -1,53 +1,61 @@
 import React from 'react';
 import request from 'superagent';
 import Nav from './partials/in/header';
+import Spinner from './partials/in/spinner';
 import Slider from './partials/in/slider';
 import Sources from './partials/in/sources';
+import HeadlineStore from '../stores/HeadlineStore';
+import HeadlineAction from '../actions/HeadlineAction';
 
 class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			source: ''
-		};
-	}
+			sources: ''
+		}
+		this.searchSources = this.searchSources.bind(this);
+	} 
 
-	componentDidMount() {
+	componentWillMount() {
 		const url = 'https://newsapi.org/v1/sources?language=en&country=us&category=general';
-		request
-		.get(url)
-		.then((response) => {
+    request.get(url).then((response) => {
+      const sources = response.body.sources;
 			this.setState({
-				source: response
-			});
-			console.log(this.state.source);
+				sources
+			})
+		});
+		HeadlineStore.on('change', () => {
+			if(HeadlineStore.source) {
+				this.setState({
+					sources: HeadlineStore.source
+				});
+			}
 		});
 	}
 
+	searchSources(query) {
+		HeadlineAction.searchSources(query);
+	}
+
 	render() {
-		const newsSource = this.state.source.body.sources;
-		if (!this.state.source) {
-			return (
-				<div>
-					<Nav />
-					<Slider />
-					<section>
-						<h5 className='orange-text text-accent-1 center-align'>headlines news sources</h5>
-						<aside>
-							Loading...
-						</aside>
-					</section>
-				</div>
-			);
-		}
+		const {sources} = this.state;
 		return (
 			<div>
-				<Nav />
+				<Nav searchSources = {this.searchSources} />
 				<Slider />
 				<section>
 					<h5 className='orange-text text-accent-1 center-align'>headlines news sources</h5>
+						{
+							!this.state.sources && (
+								<Spinner />
+							)
+						}
 					<div className="row">
-						<Sources sources = {newsSource}/>
+						{
+							!!this.state.sources && (
+								<Sources sources = {sources} />
+								)
+						}
 					</div>
 				</section>
 			</div>

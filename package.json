@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack",
-    "build": "webpack-dev-server --inline --content-base ./src --hot "
+    "build": "webpack-dev-server --inline --content-base ./src --hot"
   },
   "repository": {
     "type": "git",
@@ -30,10 +30,14 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
+    "file-loader": "^0.11.1",
+    "url-loader": "^0.5.8",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "axios": "^0.16.1",
+    "flux": "^3.1.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",

@@ -3,16 +3,17 @@ import Source from './source';
 
 class Sources extends React.Component {
   render() {
+    let filteredSources = this.props.sources;
     return (
       <div>
         {
-          this.props.sources.map((source) => {
-            return <Source source={source} />
-          })
+          filteredSources.map((source) => {
+            return <Source key={source.id} source={source} />
+          }, this)
         }
       </div>
     );
   }
-};
+}; 
 
 export default Sources;
