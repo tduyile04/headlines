@@ -1,7 +1,7 @@
 import React from 'react';
 import HeadlineAction from '../../actions/HeadlineAction';
 import HeadlineStore from '../../stores/HeadlineStore';
-import Nav from './partials/in/header';
+import Nav from '../partials/in/header';
 import Spinner from '../partials/in/spinner';
 
 class Article extends React.Component {
@@ -35,8 +35,10 @@ class Article extends React.Component {
       <section>
         {
           !articles && (
-            <Nav />
-            <Spinner />
+            <div>
+              <Nav />
+              <Spinner />
+            </div>
             )
         }
         {
