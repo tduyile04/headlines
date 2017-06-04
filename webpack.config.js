@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/js/main.js',
   output: {
     path: __dirname,
-    filename: 'dist/bundle.js'
+    filename: './dist/bundle.js'
   },
   devServer: {
     publicPath: '/',
@@ -22,6 +22,10 @@ module.exports = {
         query: {
           presets: ['es2015', 'react', 'react-hmre']
         }
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192'
       }
     ]
   }
