@@ -1,10 +1,32 @@
 import React from 'react';
+import HeadlineAction from '../../../actions/HeadlineAction';
 
 class Nav extends React.Component {
-  
-  automateSearch(e) {
-    const searchQuery = e.target.value;
-    this.props.searchSources(searchQuery);
+
+  constructor() {
+    super();
+    this.state = {
+      search: ''
+    }
+    this.searchSources = this.searchSources.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onKeyDown = this.onKeyDown.bind(this);
+  }
+
+  searchSources(query) {
+		HeadlineAction.searchSources(query)
+	}
+
+  onChange(event) {
+    this.setState({
+      search: event.target.value
+    });
+  }
+
+  onKeyDown(event) {
+    if (event.key === 'Enter') {
+      this.searchSources(this.state.search);
+    }
   }
 
   render() {
@@ -23,7 +45,9 @@ class Nav extends React.Component {
                 <input
                 type="search"
                 id="search"
-                onChange={this.automateSearch.bind(this)} />
+                value={this.state.search}
+                onChange={this.onChange}
+                onKeyDown = {this.onKeyDown} />
               </div>
             </li>
             <li><a href="/login">Log In</a></li>

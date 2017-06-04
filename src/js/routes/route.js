@@ -15,7 +15,7 @@ const Routes = ({history}) => (
     <Switch>
       <Route exact path='/' component= {App} />
       <Route path='/login' component= {logInPage} />
-      <Route path='/article/:title' component= {Articles} />
+      <Route path='/articles/:title' component= {Articles} />
     </Switch>
   </Router>
 );

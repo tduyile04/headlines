@@ -1,6 +1,6 @@
 import React from 'react';
 import HeadlineAction from '../../actions/HeadlineAction';
-import HeadlineStore from '../../stores/HeadlineStore';
+import HeadlineSourceStore from '../../stores/HeadlineSourceStore';
 import Nav from '../partials/in/header';
 import Spinner from '../partials/in/spinner';
 
@@ -14,14 +14,15 @@ class Article extends React.Component {
   }
 
   componentWillMount() {
-    const sourceName = this.props.match.params.title;
-    console.log(sourceName);
-    this.getArticles(sourceName);
-    HeadlineStore.on('load', () => {
-      this.setState({
-        articles: HeadlineAction.getAllArticles()
-      });
-      console.log()
+    const sourceName = this.props.history.location.pathname;
+    let extractTitle = sourceName.split('/')[2];
+    this.getArticles(extractTitle);
+    HeadlineSourceStore.on('change', () => {
+      if (HeadlineAction.getAllArticles) {
+        this.setState({
+          articles: HeadlineAction.getAllArticles()
+        });
+      }
     });
   }
 
