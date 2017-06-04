@@ -17,6 +17,7 @@ class HeadlineSourceStore extends EventEmitter {
   constructor() {
     super();
     this.sources = [];
+    this.filteredSources = [];
   }
 
   getAllSources() {
@@ -28,10 +29,10 @@ class HeadlineSourceStore extends EventEmitter {
     if (!query) {
       return totalSource;
     }
-    this.sources = totalSource.filter((source) => {
+    this.filteredSources = totalSource.filter((source) => {
       return source.name.toLowerCase().trim().indexOf(query.toLowerCase().trim()) !== -1;
     });
-    return this.sources;
+    return this.filteredSources;
   }
 
   handleActions(action) {

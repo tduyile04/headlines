@@ -3,12 +3,7 @@ import React from 'react';
 class Source extends React.Component {
   constructor() {
     super();
-    // this.redirect = this.redirect.bind(this);
   }
-
-  // redirect(sourceName) {
-  //   window.location = '/articles/' + sourceName;
-  // }
 
   render() {
     let source = this.props.source;
