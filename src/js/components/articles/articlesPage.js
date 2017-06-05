@@ -1,10 +1,11 @@
 import React from 'react';
 import HeadlineAction from '../../actions/HeadlineAction';
-import HeadlineSourceStore from '../../stores/HeadlineSourceStore';
+import HeadlineArticleStore from '../../stores/HeadlineArticleStore';
 import Nav from '../partials/in/header';
 import Spinner from '../partials/in/spinner';
+import Articles from '../partials/in/articles';
 
-class Article extends React.Component {
+class ArticlePage extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -15,19 +16,18 @@ class Article extends React.Component {
 
   componentWillMount() {
     const sourceName = this.props.history.location.pathname;
-    let extractTitle = sourceName.split('/')[2];
-    this.getArticles(extractTitle);
-    HeadlineSourceStore.on('change', () => {
-      if (HeadlineAction.getAllArticles) {
-        this.setState({
-          articles: HeadlineAction.getAllArticles()
-        });
-      }
-    });
+    let extractTitle = sourceName.split('/')[2].replace(/\s+/g, '-');
+    HeadlineAction.getArticles(extractTitle, 'top');
+    HeadlineArticleStore.on('change', this.getArticles);
+  }
+  componentWillUnmount() {
+    HeadlineArticleStore.removeListener('change', this.getArticles);
   }
 
-  getArticles(source) {
-		HeadlineAction.getArticles(source);
+  getArticles() {
+    this.setState({
+      articles: HeadlineArticleStore.getAllArticles()
+    });
 	}
 
   render() {
@@ -45,7 +45,9 @@ class Article extends React.Component {
         {
           !!articles && (
             // display articles
-            <div></div>
+            <div>
+              <Articles articles = {this.state.articles} />
+            </div>
           )
         }
       </section>
@@ -53,4 +55,4 @@ class Article extends React.Component {
   }
 }
 
-export default Article;
+export default ArticlePage;

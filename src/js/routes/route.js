@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import App from '../components/app';
 import logInPage from '../components/login/logInPage';
-import Articles from '../components/articles/articles';
+import Articles from '../components/articles/articlesPage';
 
 
 const Routes = ({history}) => (
