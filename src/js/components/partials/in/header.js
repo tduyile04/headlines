@@ -1,21 +1,28 @@
 import React from 'react';
-import HeadlineAction from '../../../actions/HeadlineAction';
+import { withRouter } from 'react-router-dom';
+import HeadlineActions from '../../../actions/HeadlineAction';
 
 class Nav extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      search: ''
+      search: '',
+      showAll: false
     }
     this.searchSources = this.searchSources.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   searchSources(query) {
-		HeadlineAction.searchSources(query)
+		HeadlineActions.searchSources(query)
 	}
+
+  retrieveAllSources() {
+    HeadlineActions.getSources();
+  }
 
   onChange(event) {
     this.setState({
@@ -24,33 +31,47 @@ class Nav extends React.Component {
   }
 
   onKeyDown(event) {
+    const query = this.state.search;
     if (event.key === 'Enter') {
-      this.searchSources(this.state.search);
+      this.searchSources(query);
+      this.setState({
+        search: ''
+      });
     }
   }
 
+  logout() {
+    localStorage.removeItem('userProfile');
+    this.props.history.replace('/');
+  }
+
   render() {
+    const {showAll} = this.state;
     return (
       <nav>
         <div className="nav-wrapper grey darken-3">
-          <a href="/" className="brand-logo">
-            <span className="orange-text text-accent-1">headlines</span>
+          <a className="brand-logo">
+            <span className="orange-text text-accent-1" onClick={this.retrieveAllSources}>headlines</span>
           </a>
           <ul id="nav-mobile" className="right hide-on-med-and-down orange-text text-accent-1">
-            <li>	
-              <div className="input-field col s6 grey darken-3">
-                <label htmlFor="search">
-                  <i className="material-icons">search</i>
-                </label>
-                <input
-                type="search"
-                id="search"
-                value={this.state.search}
-                onChange={this.onChange}
-                onKeyDown = {this.onKeyDown} />
-              </div>
-            </li>
-            <li><a href="/login">Log In</a></li>
+            {
+              !this.props.articles && (
+              <li>
+                <div className="input-field col s6 grey darken-3">
+                  <label htmlFor="search">
+                    <i className="material-icons">search</i>
+                  </label>
+                  <input
+                  type="search"
+                  id="search"
+                  value={this.state.search}
+                  onChange={this.onChange}
+                  onKeyDown = {this.onKeyDown} />
+                </div>
+              </li>
+              )
+            }
+            <li><a onClick={this.logout}>Log Out</a></li>
           </ul>
         </div>{/*nav-wrapper*/}
       </nav>
@@ -58,4 +79,4 @@ class Nav extends React.Component {
   }
 }
 
-export default Nav;
+export default withRouter(Nav);

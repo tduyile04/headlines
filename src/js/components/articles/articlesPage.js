@@ -46,6 +46,7 @@ class ArticlePage extends React.Component {
           !!articles && (
             // display articles
             <div>
+              <Nav articles = {this.state.articles} />
               <Articles articles = {this.state.articles} />
             </div>
           )

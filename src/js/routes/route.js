@@ -13,8 +13,8 @@ import Articles from '../components/articles/articlesPage';
 const Routes = ({history}) => (
   <Router history={browserHistory}>
     <Switch>
-      <Route exact path='/' component= {App} />
-      <Route path='/login' component= {logInPage} />
+      <Route exact path='/' component={logInPage} />
+      <Route path='/sources' component= {App} />
       <Route path='/articles/:title' component= {Articles} />
     </Switch>
   </Router>

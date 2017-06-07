@@ -1,7 +1,8 @@
 const HeadlineActionTypes = {
   GET_SOURCES: 'GET_SOURCES',
   SEARCH_SOURCES: 'SEARCH_SOURCES',
-  GET_ARTICLES: 'GET_ARTICLES'
+  GET_ARTICLES: 'GET_ARTICLES',
+  GET_ARTICLE_DETAILS: 'GET_ARTICLE_DETAILS'
 };
 
 export default HeadlineActionTypes;

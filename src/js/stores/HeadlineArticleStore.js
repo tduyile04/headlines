@@ -6,15 +6,24 @@ class HeadlineArticleStore extends EventEmitter {
   constructor() {
     super();
     this.articles = [];
+    this.articleDetail = '';
   }
 
   getAllArticles() {
     return this.articles;
   }
 
+  getArticleDetail() {
+    return this.articleDetail;
+  }
+
   handleActions(action) {
     if (action.type === HeadlineActionTypes.GET_ARTICLES) {
       this.articles = action.payload;
+      this.emit('change');
+    }
+    if (action.type === HeadlineActionTypes.GET_ARTICLE_DETAILS) {
+      this.articleDetail = action.payload;
       this.emit('change');
     }
   }

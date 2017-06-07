@@ -35,7 +35,7 @@ class App extends React.Component {
 		const { sources } = this.state;
 		return (
 			<div>
-				<Nav />
+				<Nav allSources = {sources} />
 				<Slider />
 				<section>
 					<h5 className='orange-text text-accent-1 center-align'>headlines news sources</h5>
