@@ -1,5 +1,6 @@
 import React from 'react';
 import request from 'superagent';
+import { Pagination } from 'react-materialize'
 import Nav from './partials/in/header';
 import Spinner from './partials/in/spinner';
 import Slider from './partials/in/slider';
@@ -11,9 +12,12 @@ class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			sources: ''
+			sources: '',
+			sortOptions: [],
+			currentPage: 1
 		}
 		this.getSources = this.getSources.bind(this);
+		this.changePage = this.changePage.bind(this);
 	} 
 
 	componentWillMount() {
@@ -29,28 +33,66 @@ class App extends React.Component {
 		this.setState({
 			sources: HeadlineSourceStore.getFilteredSource()
 		});
+		const { sources } = this.state;
+		// const sortOptions = sources.sortBysAvailable;
+		// console.log('source', sources);
+		// console.log('lists available', sources[0].sortBysAvailable);
+		// HeadlineAction.sendSortsAvailable(sortOptions);
 	}
 
+	changePage(currentPage) {
+    this.setState({
+      currentPage
+    });
+  }
+
 	render() {
-		const { sources } = this.state;
+		const { sources, currentPage } = this.state;
+
+		let allSources = sources;
+		const totalSources = allSources.length;
+    const sourcePerPage = 6;
+    const end = currentPage * sourcePerPage;
+    const start = end - sourcePerPage;
+
+    allSources = allSources.slice(start, end);
+
+		const selectedSources = (
+			<div className='row'>
+				<Sources sources = {allSources} />
+			</div>
+		);
+
+		const emptyNotification = (
+			<div className='center-align'>
+				<h4 className='white-text'>No source found that matches this query</h4>
+			</div>
+		);
+
 		return (
 			<div>
-				<Nav allSources = {sources} />
+				<Nav allSources = {allSources} />
 				<Slider />
 				<section>
 					<h5 className='orange-text text-accent-1 center-align'>headlines news sources</h5>
 						{
-							!this.state.sources && (
+							!allSources && (
 								<Spinner />
 							)
 						}
-					<div className="row">
+					<div className="right-align">
 						{
-							!!this.state.sources && (
-								<Sources sources = {sources} />
-								)
+							!!allSources && (
+									<Pagination
+										className = 'white-text'
+										items={Math.ceil(sources.length / sourcePerPage)}
+										activePage={currentPage}
+										onSelect={current => this.changePage(current)}
+									/>
+							)
 						}
 					</div>
+					{ allSources.length === 0 ? emptyNotification : selectedSources }
 				</section>
 			</div>
 		);

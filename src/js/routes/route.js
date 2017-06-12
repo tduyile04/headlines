@@ -8,6 +8,7 @@ import {
 import App from '../components/app';
 import logInPage from '../components/login/logInPage';
 import Articles from '../components/articles/articlesPage';
+// import ArticleDetails from '../components/partials/in/article-details';
 
 
 const Routes = ({history}) => (
@@ -16,6 +17,7 @@ const Routes = ({history}) => (
       <Route exact path='/' component={logInPage} />
       <Route path='/sources' component= {App} />
       <Route path='/articles/:title' component= {Articles} />
+      {/*<Route path='/article/detail' component={ArticleDetails} />*/}
     </Switch>
   </Router>
 );

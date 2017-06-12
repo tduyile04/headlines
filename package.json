@@ -38,14 +38,22 @@
   "dependencies": {
     "auth0-js": "^8.7.0",
     "axios": "^0.16.1",
+    "css-loader": "^0.28.4",
     "dotenv": "^4.0.0",
+    "extract-text-webpack-plugin": "^2.1.2",
     "flux": "^3.1.2",
     "gapi": "0.0.3",
     "mercury-parser": "^1.0.0",
+    "node-sass": "^4.5.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-google-login": "^2.8.9",
+    "react-materialize": "^1.0.1",
+    "react-render-html": "^0.1.6",
     "react-router-dom": "^4.1.1",
+    "resolve-url-loader": "^2.0.2",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.2",
     "superagent": "^3.5.2"
   }
 }

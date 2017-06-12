@@ -3,6 +3,8 @@ import GoogleLogin from 'react-google-login';
 import { withRouter } from 'react-router-dom';
 // import { config } from 'dotenv';
 import background from '../../../images/login2.jpg';
+import '../../../scss/style.scss';
+
 
 class logInPage extends React.Component {
   constructor() {
@@ -25,19 +27,22 @@ class logInPage extends React.Component {
     const clientId = '658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
     return(
       <div className='wallpaper'>
-        <h4 className='white-text'>headlines</h4>
-        <h5 className='white-text'>...reporting light sources after sunset</h5>
-        <p className='white-text'>Do you have a google account</p>
-        <div className="card-action">
-          <GoogleLogin
-            className="waves-effect waves-light btn"
-            clientId={clientId}
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle}
-            buttonText='Log In'
-            uxMode='popup'>
-          </GoogleLogin>
-        </div>
+        <img src='../images/login2.jpg'  className='wall' />
+        <section className='tagline right-align'>
+          <h3 className='white-text'>headlines</h3>
+          <h4 className='white-text'>...reporting light sources after sunset</h4>
+          <p className='white-text'>Do you have a google account</p>
+          <div className="card-action">
+            <GoogleLogin
+              className="waves-effect waves-light btn"
+              clientId={clientId}
+              onSuccess={this.responseGoogle}
+              onFailure={this.responseGoogle}
+              buttonText='Log In'
+              uxMode='popup'>
+            </GoogleLogin>
+          </div>
+        </section>
       </div>
     );
   }

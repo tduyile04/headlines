@@ -29,12 +29,19 @@ class HeadlineActions {
     });
   }
 
-  static getArticleDetail(url) {
-    return mercuryAPI.getArticleDetail(url).then((article) => {
+  static showFullArticle(url) {
+    return mercuryAPI.scrapeArticle(url).then((article) => {
       HeadlineDispatcher.dispatch({
-        type: HeadlineActionTypes.GET_ARTICLE_DETAILS,
+        type: HeadlineActionTypes.GET_FULL_ARTICLE,
         payload: article
       });
+    });
+  }
+
+  static sendSortsAvailable(sortOptions) {
+    return HeadlineDispatcher({
+      type: HeadlineActionTypes.SORT_OPTIONS,
+      payload: sortOptions
     });
   }
 }

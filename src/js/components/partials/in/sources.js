@@ -5,7 +5,7 @@ class Sources extends React.Component {
   render() {
     let filteredSources = this.props.sources;
     return (
-      <div>
+      <div className='row'>
         {
           filteredSources.map((source) => {
             return <Source key={source.id} source={source} />

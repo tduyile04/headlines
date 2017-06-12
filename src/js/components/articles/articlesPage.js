@@ -9,7 +9,8 @@ class ArticlePage extends React.Component {
   constructor() {
     super();
     this.state = {
-      articles: ""
+      articles: '',
+      sortOptions: ''
     };
     this.getArticles = this.getArticles.bind(this);
   }
@@ -46,8 +47,8 @@ class ArticlePage extends React.Component {
           !!articles && (
             // display articles
             <div>
-              <Nav articles = {this.state.articles} />
-              <Articles articles = {this.state.articles} />
+              <Nav articles = {articles} />
+              <Articles articles = {articles} />
             </div>
           )
         }
