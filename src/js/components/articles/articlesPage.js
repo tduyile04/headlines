@@ -33,6 +33,8 @@ class ArticlePage extends React.Component {
 
   render() {
     const { articles } = this.state;
+    const user = localStorage.getItem('userProfile');
+    console.log(user);
     return (
       <section>
         {

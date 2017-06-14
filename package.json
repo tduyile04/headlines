@@ -4,10 +4,11 @@
   "description": "A modern rss feeds that allows you view headlines from different news sources",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack",
     "build": "webpack-dev-server --inline --content-base ./src --hot",
-    "prod": "NODE_ENV=production node server.js"
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
