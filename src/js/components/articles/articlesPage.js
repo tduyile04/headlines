@@ -51,6 +51,9 @@ class ArticlePage extends React.Component {
             <div>
               <Nav articles = {articles} />
               <Articles articles = {articles} />
+                    {/*<div>
+        <h3 style={{color: 'white'}}>I am white and balck</h3>
+      </div>*/}
             </div>
           )
         }

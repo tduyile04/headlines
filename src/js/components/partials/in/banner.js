@@ -49,8 +49,15 @@ class Banner extends React.Component {
             trigger={
               <Button waves='light' onClick={this.showFullArticle(article.url) }>Read More</Button>
             }>
-            <h3><b>{renderHTML(fullArticle.title)}</b></h3><br />
-            {renderHTML(fullArticle.content)}
+            {(typeof fullArticle !== 'string') ?
+              <div>
+                <h3><b>{renderHTML(fullArticle.title)}</b></h3><br />
+                {renderHTML(fullArticle.content)}
+              </div>
+              :
+              ''
+            }
+            
           </Modal>
         </span>
         </div>

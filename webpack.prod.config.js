@@ -4,14 +4,9 @@ const webpack = require('webpack');
 module.exports = {
   entry: ['./src/js/main.js', './src/scss/style.scss'],
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js'
-  },
-  devServer: {
-    publicPath: '/',
-    contentBase: './dist',
-    historyApiFallback: true,
-    hot: true
+    path: path.join(__dirname, '/dist'),
+    filename: 'bundle.js',
+    publicPath: path.join(__dirname, '/dist/')
   },
   module: {
     loaders: [
