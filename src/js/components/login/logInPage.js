@@ -24,7 +24,7 @@ class logInPage extends React.Component {
 
   render() {
     // const clientId = process.env.CLIENT_ID;
-    const clientId = '658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
+    const clientId = '800848299920-7q9m965c5gv8pv8ovfqn16gr08kb98nr.apps.googleusercontent.com'
     return(
       <div className='wallpaper'>
         <img src='../images/login2.jpg'  className='wall' />
