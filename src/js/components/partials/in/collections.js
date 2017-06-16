@@ -3,7 +3,7 @@ import Collection from './collection';
 
 const Collections = ({articles}) => {
   return (
-    <div>
+    <div className='headRoom'>
       {
         articles.map((article) => {
           return <Collection key={article.publishedAt} article= {article} />

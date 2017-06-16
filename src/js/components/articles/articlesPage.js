@@ -9,7 +9,8 @@ class ArticlePage extends React.Component {
   constructor() {
     super();
     this.state = {
-      articles: ""
+      articles: '',
+      sortOptions: ''
     };
     this.getArticles = this.getArticles.bind(this);
   }
@@ -32,6 +33,8 @@ class ArticlePage extends React.Component {
 
   render() {
     const { articles } = this.state;
+    const user = localStorage.getItem('userProfile');
+    console.log(user);
     return (
       <section>
         {
@@ -46,7 +49,11 @@ class ArticlePage extends React.Component {
           !!articles && (
             // display articles
             <div>
-              <Articles articles = {this.state.articles} />
+              <Nav articles = {articles} />
+              <Articles articles = {articles} />
+                    {/*<div>
+        <h3 style={{color: 'white'}}>I am white and balck</h3>
+      </div>*/}
             </div>
           )
         }

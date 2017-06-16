@@ -1,6 +1,7 @@
 import HeadlineActionTypes from '../constants/HeadlineActionTypes';
 import HeadlineDispatcher from '../dispatcher/HeadlineDispatcher';
 import API from '../utils/HeadlineAPI';
+import mercuryAPI from '../utils/ArticleScraperAPI';
 
 class HeadlineActions {
   static getSources() {
@@ -25,6 +26,22 @@ class HeadlineActions {
         type: HeadlineActionTypes.GET_ARTICLES,
         payload: articles
       });
+    });
+  }
+
+  static showFullArticle(url) {
+    return mercuryAPI.scrapeArticle(url).then((article) => {
+      HeadlineDispatcher.dispatch({
+        type: HeadlineActionTypes.GET_FULL_ARTICLE,
+        payload: article
+      });
+    });
+  }
+
+  static sendSortsAvailable(sortOptions) {
+    return HeadlineDispatcher({
+      type: HeadlineActionTypes.SORT_OPTIONS,
+      payload: sortOptions
     });
   }
 }

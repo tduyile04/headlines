@@ -1,0 +1,72 @@
+.wall {
+	background-size: cover;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.tagline {
+	position: absolute;
+	margin-top: -550px;
+	margin-left: 50%;
+	font-weight: bolder;
+	h3 {
+			font-size: 70px;
+	}
+}
+.card-content{
+	height: 200px;
+}
+
+#logo {
+	height: 130px;
+	width: 130px;
+}
+
+.first-banner {
+	width: 100%;
+	.images {
+		padding-left: -20px;
+		padding-right: -20px;
+		width: 100%;
+		height: 500px;
+	}
+}
+
+.articleSection {
+	padding: 20px;
+}
+
+#grid-card {
+	height: 380px;
+}
+img.col.s12.m10.card-image {
+	width: 100%;
+	height: 200px;
+}
+.grid-content {
+	width: 100%;
+	height: 390px;
+	.btn {
+		width: 320px;
+		margin-left: 10%;
+		margin-right: 5%;
+		margin-bottom: 10px;
+	}
+}
+ul.collection :first{
+	margin-top: 20%;
+	border-style: none;
+	border-color: transparent;
+}
+li.collection-item.avatar {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	border-style: none;
+	border-color: transparent;
+	background-color: #424242;
+}
+
+.headRoom {
+	margin-top: 10%;
+}

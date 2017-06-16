@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://newsapi.org/v1/';
-const API_KEY = '213327409d384371851777e7c7f78dfe';
+const BASE_URL = 'https://newsapi.org/v1/';
+const API_KEY = 'a0fc58ad2b5f460eb69a5c54f470fddf';
 
 class API {
   static getSources() {
-    const url = `${BASE_URL}sources?language=en`;
+    const url = `${BASE_URL}sources?language=en&apiKey=${API_KEY}`;
     return axios.get(url)
       .then(res => res.data.sources).catch(error => error);
   }

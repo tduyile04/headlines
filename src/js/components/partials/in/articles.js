@@ -19,6 +19,7 @@ class Articles extends React.Component {
 
   render() {
     const { articles } = this.state;
+    console.log(articles);
     const bannerArticle = articles[0];
     const gridArticles = articles.slice(1, 4);
     const collectionArticles = articles.slice(4, articles.length);
