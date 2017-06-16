@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://newsapi.org/v1/';
+const BASE_URL = 'https://newsapi.org/v1/';
 const API_KEY = 'a0fc58ad2b5f460eb69a5c54f470fddf';
 
 class API {
