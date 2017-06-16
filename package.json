@@ -1,5 +1,5 @@
 {
-  "name": "headlines",
+  "name": "headlinesfeed",
   "version": "1.0.0",
   "description": "A modern rss feeds that allows you view headlines from different news sources",
   "main": "index.js",
