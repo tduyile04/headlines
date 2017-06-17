@@ -54,23 +54,19 @@ class Nav extends React.Component {
             <span className="orange-text text-accent-1" onClick={this.retrieveAllSources}>headlines</span>
           </a>
           <ul id="nav-mobile" className="right hide-on-med-and-down orange-text text-accent-1">
-            {
-              !this.props.articles && (
-              <li>
-                <div className="input-field col s6 grey darken-3">
-                  <label htmlFor="search">
-                    <i className="material-icons">search</i>
-                  </label>
-                  <input
-                  type="search"
-                  id="search"
-                  value={this.state.search}
-                  onChange={this.onChange}
-                  onKeyDown = {this.onKeyDown} />
-                </div>
-              </li>
-              )
-            }
+            <li>
+              <div className="input-field col s6 grey darken-3">
+                <label htmlFor="search">
+                  <i className="material-icons">search</i>
+                </label>
+                <input
+                type="search"
+                id="search"
+                value={this.state.search}
+                onChange={this.onChange}
+                onKeyDown = {this.onKeyDown} />
+              </div>
+            </li>
             <li><a onClick={this.logout}>Log Out</a></li>
           </ul>
         </div>{/*nav-wrapper*/}

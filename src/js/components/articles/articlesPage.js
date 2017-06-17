@@ -1,7 +1,7 @@
 import React from 'react';
 import HeadlineAction from '../../actions/HeadlineAction';
 import HeadlineArticleStore from '../../stores/HeadlineArticleStore';
-import Nav from '../partials/in/header';
+import NavBar from '../partials/in/header-detail';
 import Spinner from '../partials/in/spinner';
 import Articles from '../partials/in/articles';
 
@@ -40,7 +40,7 @@ class ArticlePage extends React.Component {
         {
           !articles && (
             <div>
-              <Nav />
+              <NavBar />
               <Spinner />
             </div>
             )
@@ -49,11 +49,8 @@ class ArticlePage extends React.Component {
           !!articles && (
             // display articles
             <div>
-              <Nav articles = {articles} />
+              <NavBar articles = {articles} />
               <Articles articles = {articles} />
-                    {/*<div>
-        <h3 style={{color: 'white'}}>I am white and balck</h3>
-      </div>*/}
             </div>
           )
         }

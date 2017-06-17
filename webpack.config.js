@@ -35,7 +35,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg)$/,
-        loader: 'url-loader?limit=200000'
+        loader: 'url-loader?limit=2000000'
       }
     ]
   },

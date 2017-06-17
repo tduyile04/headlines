@@ -37,13 +37,6 @@ class HeadlineActions {
       });
     });
   }
-
-  static sendSortsAvailable(sortOptions) {
-    return HeadlineDispatcher({
-      type: HeadlineActionTypes.SORT_OPTIONS,
-      payload: sortOptions
-    });
-  }
 }
 
 export default HeadlineActions;
