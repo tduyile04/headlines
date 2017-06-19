@@ -6,12 +6,25 @@ import background from '../../../images/login2.jpg';
 import '../../../scss/style.scss';
 
 
+/**
+ * Component detailing the welcome page and log in option
+ * with a Google id
+ * @class logInPage
+ * @extends {React.Component}
+ */
 class logInPage extends React.Component {
   constructor() {
     super();
     this.responseGoogle = this.responseGoogle.bind(this);
   }
 
+  /**
+   * Sets appropriate user data in response to log in action and
+   * saves a copy for reference in other components
+   * @param {any} response 
+   * 
+   * @memberof logInPage
+   */
   responseGoogle(response) {
     const loginProfile = response.getBasicProfile();
     const userProfile = {};
@@ -24,7 +37,6 @@ class logInPage extends React.Component {
 
   render() {
     // const clientId = process.env.CLIENT_ID;
-    const destination = 'https://headlinesfeed.herokuapp.com/sources' || 'http://localhost:8080/sources'
     const clientId = '800848299920-7q9m965c5gv8pv8ovfqn16gr08kb98nr.apps.googleusercontent.com'
     return(
       <div className='wallpaper'>
@@ -40,8 +52,7 @@ class logInPage extends React.Component {
               onSuccess={this.responseGoogle}
               onFailure={this.responseGoogle}
               buttonText='Log In'
-              uxMode='popup'
-              redirectUri={destination}>
+              uxMode='popup'>
             </GoogleLogin>
           </div>
         </section>

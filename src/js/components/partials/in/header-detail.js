@@ -2,6 +2,11 @@ import React from 'react';
 import { withRouter, browserHistory } from 'react-router-dom';
 import HeadlineActions from '../../../actions/HeadlineAction';
 
+/**
+ * Navigation bar display on the other dashbooard
+ * @class NavBar
+ * @extends {React.Component}
+ */
 class NavBar extends React.Component {
 
   constructor() {
@@ -13,6 +18,10 @@ class NavBar extends React.Component {
     this.logout = this.logout.bind(this);
   }
 
+  /**
+   * logs out of the app and removes user profile from the local storage
+   * @memberof NavBar
+   */
   logout() {
     localStorage.removeItem('userProfile');
     this.props.history.replace('/');

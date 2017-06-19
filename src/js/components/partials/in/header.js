@@ -2,6 +2,11 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import HeadlineActions from '../../../actions/HeadlineAction';
 
+/**
+ * Navigation bar display on the sources dashbooard
+ * @class Nav
+ * @extends {React.Component}
+ */
 class Nav extends React.Component {
 
   constructor() {
@@ -16,20 +21,40 @@ class Nav extends React.Component {
     this.logout = this.logout.bind(this);
   }
 
+  /**
+   * Creates search actions from collection of the sources in the store
+   * @param {any} query 
+   * @memberof Nav
+   */
   searchSources(query) {
 		HeadlineActions.searchSources(query)
 	}
 
+  /**
+   * Creates an action that gets data from the stores
+   * @memberof Nav
+   */
   retrieveAllSources() {
     HeadlineActions.getSources();
   }
 
+  /**
+   * Allows user input to be changed dynamically in the input field
+   * @param {any} event 
+   * @memberof Nav
+   */
   onChange(event) {
     this.setState({
       search: event.target.value
     });
   }
 
+  /**
+   * automates source search when the enter key is pressed 
+   * down
+   * @param {any} event
+   * @memberof Nav
+   */
   onKeyDown(event) {
     const query = this.state.search;
     if (event.key === 'Enter') {
@@ -40,6 +65,10 @@ class Nav extends React.Component {
     }
   }
 
+  /**
+   * logs out of the app and removes user profile from the local storage
+   * @memberof NavBar
+   */
   logout() {
     localStorage.removeItem('userProfile');
     this.props.history.replace('/');

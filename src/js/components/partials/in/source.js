@@ -2,6 +2,11 @@ import React from 'react';
 import { Dropdown, Button, NavItem } from 'react-materialize';
 import logo from '../../../../json/logo.json';
 
+/**
+ * Child Component detailing the display and attributes of each source component
+ * @class Source
+ * @extends {React.Component}
+ */
 class Source extends React.Component {
   constructor() {
     super();

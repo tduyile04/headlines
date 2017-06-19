@@ -4,6 +4,12 @@ import renderHTML from 'react-render-html';
 import HeadlineActions from '../../../actions/HeadlineAction';
 import HeadlineScrapeStore from '../../../stores/HeadlineScrapeStore';
 
+/**
+ * Grid component detailing the display of the articles returned in
+ * the list
+ * @class Collection
+ * @extends {React.Component}
+ */
 class Grid extends React.Component{
   constructor() {
     super();
@@ -20,6 +26,11 @@ class Grid extends React.Component{
     })
   }
 
+	/**
+	 * Retrieves full scraped data from the store and re-sets state
+	 * accordingly
+	 * @memberof ArticleDetails
+	 */
   showFullArticle (url) {
     HeadlineActions.showFullArticle(url);
     this.props.history.push('/article/detail');

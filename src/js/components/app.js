@@ -8,6 +8,12 @@ import Sources from './partials/in/sources';
 import HeadlineSourceStore from '../stores/HeadlineSourceStore';
 import HeadlineAction from '../actions/HeadlineAction';
 
+/**
+ * Parent Component for dashboard after user successful log in, detailing
+ * a paginated list of news sources
+ * @class App
+ * @extends {React.Component}
+ */
 class App extends React.Component {
 	constructor() {
 		super();
@@ -29,6 +35,11 @@ class App extends React.Component {
 		HeadlineSourceStore.removeListener('change', this.getSources);
 	}
 
+	/**
+	 * Retrieves and sets state with the filtered news sources from the store,
+	 * if search query is empty, then all news sources are retrieved
+	 * @memberof App
+	 */
 	getSources() {
 		this.setState({
 			sources: HeadlineSourceStore.getFilteredSource()
@@ -36,6 +47,11 @@ class App extends React.Component {
 		const { sources } = this.state;
 	}
 
+	/**
+	 * Changes the viewed page to the current page clicked
+	 * @param {any} currentPage
+	 * @memberof App
+	 */
 	changePage(currentPage) {
     this.setState({
       currentPage

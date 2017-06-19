@@ -3,6 +3,12 @@ import Banner from './banner';
 import GridLayout from './gridLayout';
 import Collections from './collections';
 
+/**
+ * Component breaking the articles into three different sections
+ * Banner, Grid and Collections
+ * @class Articles
+ * @extends {React.Component}
+ */
 class Articles extends React.Component {
   constructor() {
     super();
@@ -19,7 +25,6 @@ class Articles extends React.Component {
 
   render() {
     const { articles } = this.state;
-    console.log(articles);
     const bannerArticle = articles[0];
     const gridArticles = articles.slice(1, 4);
     const collectionArticles = articles.slice(4, articles.length);

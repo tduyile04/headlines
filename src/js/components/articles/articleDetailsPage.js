@@ -5,6 +5,11 @@ import Spinner from '../partials/in/spinner';
 import HeadlineActions from '../../actions/HeadlineAction';
 import HeadlineScrapeStore from '../../stores/HeadlineScrapeStore';
 
+/**
+ * Component displaying scraped data from the original news source site
+ * @class ArticleDetails
+ * @extends {React.Component}
+ */
 class ArticleDetails extends React.Component {
   constructor() {
 		super();
@@ -18,6 +23,11 @@ class ArticleDetails extends React.Component {
     HeadlineScrapeStore.on('change', this.getFullArticle);
 	}
 
+	/**
+	 * Retrieves full scraped data from the store and re-sets state
+	 * accordingly
+	 * @memberof ArticleDetails
+	 */
 	getFullArticle() {
     this.setState({
       fullArticle: HeadlineScrapeStore.getFullArticle()

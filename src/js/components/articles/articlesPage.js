@@ -5,6 +5,12 @@ import NavBar from '../partials/in/header-detail';
 import Spinner from '../partials/in/spinner';
 import Articles from '../partials/in/articles';
 
+/**
+ * Parent Component for the article page, passes all articles
+ * to child componet
+ * @class ArticlePage
+ * @extends {React.Component}
+ */
 class ArticlePage extends React.Component {
   constructor() {
     super();
@@ -25,6 +31,11 @@ class ArticlePage extends React.Component {
     HeadlineArticleStore.removeListener('change', this.getArticles);
   }
 
+  /**
+   * gets all articles from the store and re-sets its state
+   * correspndingly
+   * @memberof ArticlePage
+   */
   getArticles() {
     this.setState({
       articles: HeadlineArticleStore.getAllArticles()

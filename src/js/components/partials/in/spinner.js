@@ -1,5 +1,10 @@
 import React from 'react';
-
+/**
+ * Spinner component that displays a loop ainmation while page
+ * is loading
+ * @class Spinner
+ * @extends {React.Component}
+ */
 const Spinner = () => {
   return (
     <div className="preloader-wrapper big active center-align">

@@ -20,7 +20,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node-modules/,
         query: {
-          presets: ['es2015', 'react', 'react-hmre']
+          presets: ['es2015', 'react']
         }
       },
       {
@@ -35,7 +35,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg)$/,
-        loader: 'url-loader?limit=20000000'
+        loader: 'url-loader?limit=200000000'
       }
     ]
   },

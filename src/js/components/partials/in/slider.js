@@ -3,6 +3,11 @@ import banner1 from '../../../../images/war1.jpg';
 import banner2 from '../../../../images/jared.jpg';
 import banner3 from '../../../../images/bomb.jpg';
 
+/**
+ * Slider component that displays an animation of the articles
+ * @class Slider
+ * @extends {React.Component}
+ */
 class Slider extends React.Component {
   render() {
     return (

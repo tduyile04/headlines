@@ -3,15 +3,13 @@ import HeadlineActionTypes from '../constants/HeadlineActionTypes';
 import HeadlineDispatcher from '../dispatcher/HeadlineDispatcher';
 
 /**
- * 
- * 
+ * Handles sources retrieval and source streamlining logic
  * @class HeadlineStore
  * @extends {EventEmitter}
  */
 class HeadlineSourceStore extends EventEmitter {
   /**
    * Creates an instance of HeadlineStore.
-   * 
    * @memberOf HeadlineStore
    */
   constructor() {
@@ -20,10 +18,22 @@ class HeadlineSourceStore extends EventEmitter {
     this.filteredSources = [];
   }
 
+  /**
+   * retrieves all data sources
+   * @returns array
+   * @memberof HeadlineSourceStore
+   */
   getAllSources() {
     return this.sources;
   }
 
+  /**
+   * retrieves a streamlined source data based on the query
+   * @param {any} query search query
+   * @returns array
+   * 
+   * @memberof HeadlineSourceStore
+   */
   getFilteredSource(query) {
     const totalSource = this.getAllSources();
     if (!query) {
@@ -34,7 +44,13 @@ class HeadlineSourceStore extends EventEmitter {
     });
     return this.sources;
   }
-
+  
+  /**
+   * selects the right action to listen to and emit change events
+   * correspondingly
+   * @param {any} action mitted action from view
+   * @memberof HeadlineSourceStore
+   */
   handleActions(action) {
     switch (action.type) {
       case HeadlineActionTypes.GET_SOURCES:

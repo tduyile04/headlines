@@ -5,6 +5,12 @@ import renderHTML from 'react-render-html';
 import HeadlineActions from '../../../actions/HeadlineAction';
 import HeadlineScrapeStore from '../../../stores/HeadlineScrapeStore';
 
+/**
+ * Banner component showing a section of the first article returned in
+ * the article list
+ * @class Banner
+ * @extends {React.Component}
+ */
 class Banner extends React.Component {
   constructor() {
     super();
@@ -21,6 +27,12 @@ class Banner extends React.Component {
     });
   }
 
+  /**
+   * Creates an action that scrapes data from the original source url
+   * into a new page
+   * @param {any} url 
+   * @memberof Banner
+   */
   showFullArticle (url) {
     HeadlineActions.showFullArticle(url);
     this.props.history.push('/article/detail')
