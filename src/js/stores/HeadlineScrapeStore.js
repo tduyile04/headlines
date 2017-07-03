@@ -35,6 +35,7 @@ class HeadlineScrapeStore extends EventEmitter {
 }
 
 const headlineScrapeStore = new HeadlineScrapeStore();
-HeadlineDispatcher.register(headlineScrapeStore.handleActions.bind(headlineScrapeStore));
+HeadlineDispatcher
+  .register(headlineScrapeStore.handleActions.bind(headlineScrapeStore));
 
 export default headlineScrapeStore;

@@ -20,7 +20,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node-modules/,
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'stage-2', 'react']
         }
       },
       {
@@ -41,5 +41,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js']
-  }
+  },
+  plugins: [
+    new Dotenv({
+      path: './.env',
+    })
+  ]
 };

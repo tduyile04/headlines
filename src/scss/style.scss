@@ -1,3 +1,15 @@
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.page-wrap {
+  flex: 1 0 auto;
+}
+
 .wall {
 	background-size: cover;
 	position: relative;
@@ -11,16 +23,23 @@
 	margin-left: 50%;
 	font-weight: bolder;
 	h3 {
-			font-size: 70px;
+		font-size: 70px;
 	}
 }
 .card-content{
 	height: 200px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.content-description {
+	font-size: 13px;
 }
 
 #logo {
 	height: 130px;
 	width: 130px;
+	padding-top: 30px;
 }
 
 .first-banner {
@@ -33,6 +52,10 @@
 	}
 }
 
+.source-container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
 .articleSection {
 	padding: 20px;
 }
@@ -69,4 +92,19 @@ li.collection-item.avatar {
 
 .headRoom {
 	margin-top: 10%;
+}
+
+.branded-logo {
+	padding-left: 20px;
+	cursor: pointer;
+}
+
+.sidebtn {
+	cursor: pointer;
+	padding-left: 5px; 
+}
+
+.scraped-content {
+	padding-bottom: 10px;
+	img { width: 100%;}
 }

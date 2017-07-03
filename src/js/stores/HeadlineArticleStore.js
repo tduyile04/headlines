@@ -42,7 +42,8 @@ class HeadlineArticleStore extends EventEmitter {
 }
 
 const headlineArticleStore = new HeadlineArticleStore();
-HeadlineDispatcher.register(headlineArticleStore.handleActions.bind(headlineArticleStore));
+HeadlineDispatcher
+  .register(headlineArticleStore.handleActions.bind(headlineArticleStore));
 
 export default headlineArticleStore;
 

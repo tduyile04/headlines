@@ -1,6 +1,6 @@
 import HeadlineActionTypes from '../constants/HeadlineActionTypes';
 import HeadlineDispatcher from '../dispatcher/HeadlineDispatcher';
-import API from '../utils/HeadlineAPI';
+import HeadlineAPI from '../utils/HeadlineAPI';
 import mercuryAPI from '../utils/ArticleScraperAPI';
 
 /**
@@ -17,7 +17,7 @@ class HeadlineActions {
    * @memberof HeadlineActions
    */
   static getSources() {
-    return API.getSources().then((sources) => {
+    return HeadlineAPI.getSources().then((sources) => {
       HeadlineDispatcher.dispatch({
         type: HeadlineActionTypes.GET_SOURCES,
         payload: sources
@@ -46,11 +46,10 @@ class HeadlineActions {
    * @param {any} source news source
    * @param {any} sortBy sort order of the articles: top, popular etc.
    * @returns object
-   * 
    * @memberof HeadlineActions
    */
   static getArticles(source, sortBy) {
-    return API.getHeadlines(source, sortBy).then((articles) => {
+    return HeadlineAPI.getHeadlines(source, sortBy).then((articles) => {
       HeadlineDispatcher.dispatch({
         type: HeadlineActionTypes.GET_ARTICLES,
         payload: articles
@@ -64,7 +63,6 @@ class HeadlineActions {
    * @static
    * @param {any} url the address for the complete article read
    * @returns object
-   * 
    * @memberof HeadlineActions
    */
   static showFullArticle(url) {

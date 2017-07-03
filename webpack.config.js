@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: ['./src/js/main.js', './src/scss/style.scss'],
@@ -20,8 +21,8 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node-modules/,
         query: {
-          presets: ['es2015', 'react', 'react-hmre']
-        }
+          presets: ['es2015', 'stage-2', 'react', 'react-hmre']
+        },
       },
       {
         test: /\.scss$/,
@@ -41,5 +42,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js']
-  }
+  },
+  plugins: [
+    new Dotenv({
+      path: './.env',
+    })
+  ]
 };
