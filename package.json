@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.js --inline --content-base ./src --hot",
     "start": "NODE_ENV=production node server.js",
-    "postinstall": "./node_modules/.bin/webpack --config webpack.prod.config.js -p --progress --colors",
     "test": "jest -u"
   },
   "repository": {
