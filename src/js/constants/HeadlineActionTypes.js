@@ -3,7 +3,6 @@ const HeadlineActionTypes = {
   SEARCH_SOURCES: 'SEARCH_SOURCES',
   GET_ARTICLES: 'GET_ARTICLES',
   GET_FULL_ARTICLE: 'GET_FULL_ARTICLE',
-  SORT_OPTIONS: 'SORT_OPTIONS'
 };
 
 export default HeadlineActionTypes;

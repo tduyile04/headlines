@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 const BASE_URL = 'https://newsapi.org/v1/';
-const API_KEY = 'a0fc58ad2b5f460eb69a5c54f470fddf';
+const API_KEY = process.env.API_KEY;
 
-class API {
+class HeadlineAPI {
   static getSources() {
     const url = `${BASE_URL}sources?language=en&apiKey=${API_KEY}`;
     return axios.get(url)
@@ -18,4 +18,4 @@ class API {
   }
 }
 
-export default API;
+export default HeadlineAPI;
