@@ -6,6 +6,7 @@ module.exports = {
   entry: ['./src/js/main.js', './src/scss/style.scss'],
   output: {
     path: path.resolve(__dirname, './dist'),
+    publicPath: './dist',
     filename: 'bundle.js'
   },
   devServer: {
@@ -21,7 +22,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node-modules/,
         query: {
-          presets: ['es2015', 'stage-2', 'react', 'react-hmre']
+          presets: ['es2015', 'stage-2', 'react']
         },
       },
       {
