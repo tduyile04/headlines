@@ -63088,7 +63088,7 @@ var _ref3 = _react2.default.createElement(
 var _ref4 = _react2.default.createElement(
   'p',
   { className: 'white-text' },
-  'Do you have a google account'
+  'Do you have a google account?'
 );
 
 var LogInPage = function (_React$Component) {

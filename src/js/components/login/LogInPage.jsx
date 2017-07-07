@@ -46,7 +46,7 @@ class LogInPage extends React.Component {
           >
             ...reporting light sources after sunset
           </h4>
-          <p className="white-text">Do you have a google account</p>
+          <p className="white-text">Do you have a google account?</p>
           <div className="card-action">
             <GoogleLogin
               className="waves-effect waves-light btn"
