@@ -1,5 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
+import { MemoryRouter } from 'react-router-dom';
 import Favourite from '../../src/js/components/partials/in/Favourite.jsx';
 import FavouritesPage from
 '../../src/js/components/favourites/FavouritesPage.jsx';
@@ -20,5 +22,16 @@ describe('<Favourite />', () => {
   it('should render the same <FavouritesPage /> each time', () => {
     const wrapper = shallow(<FavouritesPage />);
     expect(wrapper).toMatchSnapshot();
+  });
+  it('should render the same <Favourite />', () => {
+    const favourite = {
+      title: 'random title',
+      description: 'a random description',
+      url: 'http://localhost:8080/favourites'
+    };
+    const tree = renderer.create(
+      <MemoryRouter><Favourite favourite={favourite} /></MemoryRouter>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

@@ -1,19 +1,22 @@
 import sinon from 'sinon';
 import HeadlineAction from '../../src/js/actions/HeadlineAction';
 import HeadlineAPI from '../../src/js/utils/HeadlineAPI';
+import ArticleScraperAPI from '../../src/js/utils/ArticleScraperAPI';
 import HeadlineDispatcher from '../../src/js/dispatcher/HeadlineDispatcher';
 import mockSources from '../../src/__mock__/sources.json';
 import mockArticles from '../../src/__mock__/articles.json';
 
 jest.mock('../../src/js/utils/HeadlineAPI', () => ({
   getSources: () => Promise.resolve({ sources: mockSources.sources }),
-  getHeadlines: () => Promise.resolve({ articles: mockArticles.articles })
+  getHeadlines: () => Promise.resolve({ articles: mockArticles.articles }),
+  showFullArticle: () => Promise.resolve({ fullArticle: 'I am an article' })
 }));
 
 describe('When Actions', () => {
   let DispatcherMock;
   const ApiGetSources = sinon.spy(HeadlineAPI, 'getSources');
   const ApiGetArticles = sinon.spy(HeadlineAPI, 'getHeadlines');
+  const ApiShowFullArticles = sinon.spy(ArticleScraperAPI, 'scrapeArticle');
 
   beforeEach(() => {
     DispatcherMock = sinon.spy(HeadlineDispatcher, 'dispatch');
@@ -37,6 +40,10 @@ describe('When Actions', () => {
       , () => {
         HeadlineAction.getArticles('cnn');
         expect(ApiGetArticles.called).toBeTruthy();
+      });
+      it('showFullArticle is called, ApiShowFullArticles to be called', () => {
+        HeadlineAction.showFullArticle('www.localhost.com');
+        expect(ApiShowFullArticles.called).toBeTruthy();
       });
     });
   });

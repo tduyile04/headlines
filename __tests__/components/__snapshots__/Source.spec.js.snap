@@ -72,6 +72,926 @@ ShallowWrapper {
 }
 `;
 
+exports[`<Source /> should display the sources 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="source col s12 m4"
+  >
+    <div
+      className="card card hoverable grey darken-3"
+    >
+      <section
+        className="row"
+      >
+        <div
+          className="col s4 m4"
+        >
+          <img
+            id="logo"
+            src="../../../../images/logo/abc-news-au.png"
+          />
+        </div>
+        <div
+          className="col s8 m8"
+        >
+          <h6
+            className="header white-text center-align"
+          >
+            ABC News (AU)
+          </h6>
+          <div
+            className="card-content"
+            style={
+              Object {
+                "height": 150,
+                "padding": 0,
+                "paddingLeft": 5,
+              }
+            }
+          >
+            <p
+              className="grey-text text-lighten-5 content-description"
+            >
+              Australia's most trusted source of local, national and world news. Comprehensive, independent, in-depth analysis, the latest business, sport, weather and more.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div
+        className="card-stacked"
+      >
+        <div
+          className="card-action row"
+        >
+          <div
+            className="orange-text text-accent-1 col m6 s6 showArticles"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            View Articles
+          </div>
+          <div
+            className="col m6 s6"
+          >
+            <div
+              className="Select Select--single is-clearable is-searchable has-value"
+              style={undefined}
+            >
+              <input
+                disabled={false}
+                name="sort-options"
+                type="hidden"
+                value="top"
+              />
+              <div
+                className="Select-control"
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                style={undefined}
+              >
+                <span
+                  className="Select-multi-value-wrapper"
+                  id="react-select-2--value"
+                >
+                  <div
+                    className="Select-value"
+                    style={undefined}
+                    title={undefined}
+                  >
+                    <span
+                      aria-selected="true"
+                      className="Select-value-label"
+                      id="react-select-2--value-item"
+                      role="option"
+                    >
+                      top
+                    </span>
+                  </div>
+                  <div
+                    className="Select-input"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                      }
+                    }
+                  >
+                    <input
+                      aria-activedescendant="react-select-2--value"
+                      aria-describedby={undefined}
+                      aria-expanded="false"
+                      aria-haspopup="false"
+                      aria-label={undefined}
+                      aria-labelledby={undefined}
+                      aria-owns=""
+                      className={undefined}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      required={false}
+                      role="combobox"
+                      style={
+                        Object {
+                          "boxSizing": "content-box",
+                          "width": "5px",
+                        }
+                      }
+                      tabIndex={undefined}
+                      value=""
+                    />
+                    <div
+                      style={
+                        Object {
+                          "height": 0,
+                          "left": 0,
+                          "overflow": "scroll",
+                          "position": "absolute",
+                          "top": 0,
+                          "visibility": "hidden",
+                          "whiteSpace": "pre",
+                        }
+                      }
+                    >
+                      
+                    </div>
+                  </div>
+                </span>
+                <span
+                  aria-label="Clear value"
+                  className="Select-clear-zone"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  title="Clear value"
+                >
+                  <span
+                    className="Select-clear"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "&times;",
+                      }
+                    }
+                  />
+                </span>
+                <span
+                  className="Select-arrow-zone"
+                  onMouseDown={[Function]}
+                >
+                  <span
+                    className="Select-arrow"
+                    onMouseDown={[Function]}
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="source col s12 m4"
+  >
+    <div
+      className="card card hoverable grey darken-3"
+    >
+      <section
+        className="row"
+      >
+        <div
+          className="col s4 m4"
+        >
+          <img
+            id="logo"
+            src="../../../../images/logo/al-jazeera-english.png"
+          />
+        </div>
+        <div
+          className="col s8 m8"
+        >
+          <h6
+            className="header white-text center-align"
+          >
+            Al Jazeera English
+          </h6>
+          <div
+            className="card-content"
+            style={
+              Object {
+                "height": 150,
+                "padding": 0,
+                "paddingLeft": 5,
+              }
+            }
+          >
+            <p
+              className="grey-text text-lighten-5 content-description"
+            >
+              News, analysis from the Middle East and worldwide, multimedia and interactives, opinions, documentaries, podcasts, long reads and broadcast schedule.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div
+        className="card-stacked"
+      >
+        <div
+          className="card-action row"
+        >
+          <div
+            className="orange-text text-accent-1 col m6 s6 showArticles"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            View Articles
+          </div>
+          <div
+            className="col m6 s6"
+          >
+            <div
+              className="Select Select--single is-clearable is-searchable has-value"
+              style={undefined}
+            >
+              <input
+                disabled={false}
+                name="sort-options"
+                type="hidden"
+                value="top"
+              />
+              <div
+                className="Select-control"
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                style={undefined}
+              >
+                <span
+                  className="Select-multi-value-wrapper"
+                  id="react-select-3--value"
+                >
+                  <div
+                    className="Select-value"
+                    style={undefined}
+                    title={undefined}
+                  >
+                    <span
+                      aria-selected="true"
+                      className="Select-value-label"
+                      id="react-select-3--value-item"
+                      role="option"
+                    >
+                      top
+                    </span>
+                  </div>
+                  <div
+                    className="Select-input"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                      }
+                    }
+                  >
+                    <input
+                      aria-activedescendant="react-select-3--value"
+                      aria-describedby={undefined}
+                      aria-expanded="false"
+                      aria-haspopup="false"
+                      aria-label={undefined}
+                      aria-labelledby={undefined}
+                      aria-owns=""
+                      className={undefined}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      required={false}
+                      role="combobox"
+                      style={
+                        Object {
+                          "boxSizing": "content-box",
+                          "width": "5px",
+                        }
+                      }
+                      tabIndex={undefined}
+                      value=""
+                    />
+                    <div
+                      style={
+                        Object {
+                          "height": 0,
+                          "left": 0,
+                          "overflow": "scroll",
+                          "position": "absolute",
+                          "top": 0,
+                          "visibility": "hidden",
+                          "whiteSpace": "pre",
+                        }
+                      }
+                    >
+                      
+                    </div>
+                  </div>
+                </span>
+                <span
+                  aria-label="Clear value"
+                  className="Select-clear-zone"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  title="Clear value"
+                >
+                  <span
+                    className="Select-clear"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "&times;",
+                      }
+                    }
+                  />
+                </span>
+                <span
+                  className="Select-arrow-zone"
+                  onMouseDown={[Function]}
+                >
+                  <span
+                    className="Select-arrow"
+                    onMouseDown={[Function]}
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="source col s12 m4"
+  >
+    <div
+      className="card card hoverable grey darken-3"
+    >
+      <section
+        className="row"
+      >
+        <div
+          className="col s4 m4"
+        >
+          <img
+            id="logo"
+            src="../../../../images/logo/ars-technica.png"
+          />
+        </div>
+        <div
+          className="col s8 m8"
+        >
+          <h6
+            className="header white-text center-align"
+          >
+            Ars Technica
+          </h6>
+          <div
+            className="card-content"
+            style={
+              Object {
+                "height": 150,
+                "padding": 0,
+                "paddingLeft": 5,
+              }
+            }
+          >
+            <p
+              className="grey-text text-lighten-5 content-description"
+            >
+              The PC enthusiast's resource. Power users and the tools they love, without computing religion.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div
+        className="card-stacked"
+      >
+        <div
+          className="card-action row"
+        >
+          <div
+            className="orange-text text-accent-1 col m6 s6 showArticles"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            View Articles
+          </div>
+          <div
+            className="col m6 s6"
+          >
+            <div
+              className="Select Select--single is-clearable is-searchable has-value"
+              style={undefined}
+            >
+              <input
+                disabled={false}
+                name="sort-options"
+                type="hidden"
+                value="top"
+              />
+              <div
+                className="Select-control"
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                style={undefined}
+              >
+                <span
+                  className="Select-multi-value-wrapper"
+                  id="react-select-4--value"
+                >
+                  <div
+                    className="Select-value"
+                    style={undefined}
+                    title={undefined}
+                  >
+                    <span
+                      aria-selected="true"
+                      className="Select-value-label"
+                      id="react-select-4--value-item"
+                      role="option"
+                    >
+                      top
+                    </span>
+                  </div>
+                  <div
+                    className="Select-input"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                      }
+                    }
+                  >
+                    <input
+                      aria-activedescendant="react-select-4--value"
+                      aria-describedby={undefined}
+                      aria-expanded="false"
+                      aria-haspopup="false"
+                      aria-label={undefined}
+                      aria-labelledby={undefined}
+                      aria-owns=""
+                      className={undefined}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      required={false}
+                      role="combobox"
+                      style={
+                        Object {
+                          "boxSizing": "content-box",
+                          "width": "5px",
+                        }
+                      }
+                      tabIndex={undefined}
+                      value=""
+                    />
+                    <div
+                      style={
+                        Object {
+                          "height": 0,
+                          "left": 0,
+                          "overflow": "scroll",
+                          "position": "absolute",
+                          "top": 0,
+                          "visibility": "hidden",
+                          "whiteSpace": "pre",
+                        }
+                      }
+                    >
+                      
+                    </div>
+                  </div>
+                </span>
+                <span
+                  aria-label="Clear value"
+                  className="Select-clear-zone"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  title="Clear value"
+                >
+                  <span
+                    className="Select-clear"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "&times;",
+                      }
+                    }
+                  />
+                </span>
+                <span
+                  className="Select-arrow-zone"
+                  onMouseDown={[Function]}
+                >
+                  <span
+                    className="Select-arrow"
+                    onMouseDown={[Function]}
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="source col s12 m4"
+  >
+    <div
+      className="card card hoverable grey darken-3"
+    >
+      <section
+        className="row"
+      >
+        <div
+          className="col s4 m4"
+        >
+          <img
+            id="logo"
+            src="../../../../images/logo/associated-press.png"
+          />
+        </div>
+        <div
+          className="col s8 m8"
+        >
+          <h6
+            className="header white-text center-align"
+          >
+            Associated Press
+          </h6>
+          <div
+            className="card-content"
+            style={
+              Object {
+                "height": 150,
+                "padding": 0,
+                "paddingLeft": 5,
+              }
+            }
+          >
+            <p
+              className="grey-text text-lighten-5 content-description"
+            >
+              The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div
+        className="card-stacked"
+      >
+        <div
+          className="card-action row"
+        >
+          <div
+            className="orange-text text-accent-1 col m6 s6 showArticles"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            View Articles
+          </div>
+          <div
+            className="col m6 s6"
+          >
+            <div
+              className="Select Select--single is-clearable is-searchable has-value"
+              style={undefined}
+            >
+              <input
+                disabled={false}
+                name="sort-options"
+                type="hidden"
+                value="top"
+              />
+              <div
+                className="Select-control"
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                style={undefined}
+              >
+                <span
+                  className="Select-multi-value-wrapper"
+                  id="react-select-5--value"
+                >
+                  <div
+                    className="Select-value"
+                    style={undefined}
+                    title={undefined}
+                  >
+                    <span
+                      aria-selected="true"
+                      className="Select-value-label"
+                      id="react-select-5--value-item"
+                      role="option"
+                    >
+                      top
+                    </span>
+                  </div>
+                  <div
+                    className="Select-input"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                      }
+                    }
+                  >
+                    <input
+                      aria-activedescendant="react-select-5--value"
+                      aria-describedby={undefined}
+                      aria-expanded="false"
+                      aria-haspopup="false"
+                      aria-label={undefined}
+                      aria-labelledby={undefined}
+                      aria-owns=""
+                      className={undefined}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      required={false}
+                      role="combobox"
+                      style={
+                        Object {
+                          "boxSizing": "content-box",
+                          "width": "5px",
+                        }
+                      }
+                      tabIndex={undefined}
+                      value=""
+                    />
+                    <div
+                      style={
+                        Object {
+                          "height": 0,
+                          "left": 0,
+                          "overflow": "scroll",
+                          "position": "absolute",
+                          "top": 0,
+                          "visibility": "hidden",
+                          "whiteSpace": "pre",
+                        }
+                      }
+                    >
+                      
+                    </div>
+                  </div>
+                </span>
+                <span
+                  aria-label="Clear value"
+                  className="Select-clear-zone"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  title="Clear value"
+                >
+                  <span
+                    className="Select-clear"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "&times;",
+                      }
+                    }
+                  />
+                </span>
+                <span
+                  className="Select-arrow-zone"
+                  onMouseDown={[Function]}
+                >
+                  <span
+                    className="Select-arrow"
+                    onMouseDown={[Function]}
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Source /> should display the sources 2`] = `
+<div
+  className="source col s12 m4"
+>
+  <div
+    className="card card hoverable grey darken-3"
+  >
+    <section
+      className="row"
+    >
+      <div
+        className="col s4 m4"
+      >
+        <img
+          id="logo"
+          src="../../../../images/logo/abc-news-au.png"
+        />
+      </div>
+      <div
+        className="col s8 m8"
+      >
+        <h6
+          className="header white-text center-align"
+        >
+          ABC News (AU)
+        </h6>
+        <div
+          className="card-content"
+          style={
+            Object {
+              "height": 150,
+              "padding": 0,
+              "paddingLeft": 5,
+            }
+          }
+        >
+          <p
+            className="grey-text text-lighten-5 content-description"
+          >
+            Australia's most trusted source of local, national and world news. Comprehensive, independent, in-depth analysis, the latest business, sport, weather and more.
+          </p>
+        </div>
+      </div>
+    </section>
+    <div
+      className="card-stacked"
+    >
+      <div
+        className="card-action row"
+      >
+        <div
+          className="orange-text text-accent-1 col m6 s6 showArticles"
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          View Articles
+        </div>
+        <div
+          className="col m6 s6"
+        >
+          <div
+            className="Select Select--single is-clearable is-searchable has-value"
+            style={undefined}
+          >
+            <input
+              disabled={false}
+              name="sort-options"
+              type="hidden"
+              value="top"
+            />
+            <div
+              className="Select-control"
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              style={undefined}
+            >
+              <span
+                className="Select-multi-value-wrapper"
+                id="react-select-6--value"
+              >
+                <div
+                  className="Select-value"
+                  style={undefined}
+                  title={undefined}
+                >
+                  <span
+                    aria-selected="true"
+                    className="Select-value-label"
+                    id="react-select-6--value-item"
+                    role="option"
+                  >
+                    top
+                  </span>
+                </div>
+                <div
+                  className="Select-input"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                    }
+                  }
+                >
+                  <input
+                    aria-activedescendant="react-select-6--value"
+                    aria-describedby={undefined}
+                    aria-expanded="false"
+                    aria-haspopup="false"
+                    aria-label={undefined}
+                    aria-labelledby={undefined}
+                    aria-owns=""
+                    className={undefined}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    required={false}
+                    role="combobox"
+                    style={
+                      Object {
+                        "boxSizing": "content-box",
+                        "width": "5px",
+                      }
+                    }
+                    tabIndex={undefined}
+                    value=""
+                  />
+                  <div
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "scroll",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  >
+                    
+                  </div>
+                </div>
+              </span>
+              <span
+                aria-label="Clear value"
+                className="Select-clear-zone"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                title="Clear value"
+              >
+                <span
+                  className="Select-clear"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "&times;",
+                    }
+                  }
+                />
+              </span>
+              <span
+                className="Select-arrow-zone"
+                onMouseDown={[Function]}
+              >
+                <span
+                  className="Select-arrow"
+                  onMouseDown={[Function]}
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<Source /> should render 1 <Sources /> 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {

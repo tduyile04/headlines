@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Source from './Source.jsx';
 
 /**
@@ -21,9 +20,5 @@ class Sources extends React.Component {
     );
   }
 }
-
-Sources.propTypes = {
-  sources: PropTypes.array
-};
 
 export default Sources;

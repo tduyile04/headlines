@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Select from 'react-select';
 import { withRouter } from 'react-router-dom';
 import 'react-select/dist/react-select.css';
-import HeadlineAction from '../../../actions/HeadlineAction';
 import logo from '../../../../json/logo.json';
 
 /**
@@ -34,7 +33,6 @@ class Source extends React.Component {
    * @memberof Source
    */
   showArticles(sourceName, chosenSortOption) {
-    HeadlineAction.saveSortOptions(chosenSortOption);
     this.props.history.push('/articles/' + sourceName + '/' + chosenSortOption);
   }
 
@@ -79,7 +77,7 @@ class Source extends React.Component {
             <div className="card-stacked">
               <div className="card-action row">
                 <div
-                  className="orange-text text-accent-1 col m6 s6"
+                  className="orange-text text-accent-1 col m6 s6 showArticles"
                   style={{ cursor: 'pointer' }}
                   onClick={
                     () => this.showArticles(

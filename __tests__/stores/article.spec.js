@@ -16,6 +16,10 @@ describe('Headline Articles Store', () => {
     callback = HeadlineDispatcher.register.mock.calls[0][0];
   });
 
+  afterEach(() => {
+    HeadlineArticleStore.articles = [];
+  });
+
   it('should register a call with the dispatcher', () => {
     expect(HeadlineDispatcher.register.mock.calls.length).toBe(1);
   });
@@ -27,5 +31,17 @@ describe('Headline Articles Store', () => {
   it('should return the appropriate result when called', () => {
     callback(articles);
     expect(HeadlineArticleStore.getAllArticles()).toEqual(mockArticleAPI);
+  });
+
+  it('should call the function that fetches articles from api', () => {
+    const action = { type: 'GET_ARTICLES', payload: mockArticleAPI.articles };
+    HeadlineArticleStore.handleActions(action);
+    expect(HeadlineArticleStore.articles.length).not.toBe(0);
+  });
+
+  it('shouldn\'t call the function that fetches articles from api', () => {
+    const action = { type: 'DON\'T_CALL', payload: mockArticleAPI.articles };
+    HeadlineArticleStore.handleActions(action);
+    expect(HeadlineArticleStore.articles.length).toBe(0);
   });
 });

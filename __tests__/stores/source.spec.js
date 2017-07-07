@@ -21,6 +21,11 @@ describe('Headline Sources Store', () => {
     callback = HeadlineDispatcher.register.mock.calls[0][0];
   });
 
+  afterEach(() => {
+    HeadlineSourceStore.sources = [];
+  });
+
+
   it('should register a call with the dispatcher', () => {
     expect(HeadlineDispatcher.register.mock.calls.length).toBe(1);
   });
@@ -42,5 +47,22 @@ describe('Headline Sources Store', () => {
   it('should return the whole data if no query is supplied', () => {
     callback(sources);
     expect(HeadlineSourceStore.getFilteredSource('').length).toEqual(4);
+  });
+  it('should call the function that fetches sources from api', () => {
+    const action = { type: 'GET_SOURCES', payload: mockSourceAPI.sources };
+    HeadlineSourceStore.handleActions(action);
+    expect(HeadlineSourceStore.sources.length).not.toBe(0);
+  });
+  it('should call the function that fetches sources from api', () => {
+    const action = { type: 'GET_SOURCES', payload: mockSourceAPI.sources };
+    HeadlineSourceStore.handleActions(action);
+    const newAction = { type: 'SEARCH_SOURCES', payload: 'abc' };
+    HeadlineSourceStore.handleActions(newAction);
+    expect(HeadlineSourceStore.sources.length).toEqual(1);
+  });
+  it('shouldn\'t call the function that fetches articles from api', () => {
+    const action = { type: 'DON\'T_CALL', payload: mockSourceAPI.sources };
+    HeadlineSourceStore.handleActions(action);
+    expect(HeadlineSourceStore.sources.length).toBe(0);
   });
 });

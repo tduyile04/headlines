@@ -19,7 +19,7 @@ class LogInPage extends React.Component {
 
   /**
    * Sets appropriate user data in response to log in action and
-   * saves a copy for reference in other components
+   * saves a copy for reference in the local storage
    * @param {any} response
    * @memberof logInPage
    */

@@ -101,7 +101,7 @@ class Article extends React.Component {
       <div className="col s12 m6">
         <div className="card horizontal grey darken-3">
           <div className="card-image">
-            <img src={article.urlToImage} alt="" style={{ height: 341 }}/>
+            <img src={article.urlToImage || ''} alt="" style={{ height: 341 }}/>
           </div>
           <div className="card-stacked">
             <div className="card-content">

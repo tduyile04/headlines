@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 import { SideNav, SideNavItem } from 'react-materialize';
 
 /**
@@ -45,14 +44,10 @@ function SideBar({ user }) {
         </SideNavItem>
         <SideNavItem divider />
         <SideNavItem subheader>Recently Viewed Favourites</SideNavItem>
-        <SideNavItem waves href="#!third">Third Link With Waves</SideNavItem>
+        <SideNavItem waves href="#!third">Still Random Post</SideNavItem>
       </SideNav>
     </span>
   );
 }
-
-// Sidebar.propTypes = {
-//   user: PropTypes.string
-// };
 
 export default withRouter(SideBar);

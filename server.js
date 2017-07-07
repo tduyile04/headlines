@@ -8,4 +8,4 @@ server.use(history());
 
 server.use(express.static(path.join(__dirname, '/dist')));
 
-server.listen(process.env.PORT || 8080);
+server.listen(process.env.PORT || 3000);

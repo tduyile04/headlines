@@ -119,7 +119,7 @@ class Nav extends React.Component {
 
 Nav.propTypes = {
   history: PropTypes.object,
-  user: PropTypes.object
+  user: PropTypes.string
 };
 
 export default withRouter(Nav);

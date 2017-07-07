@@ -4,7 +4,8 @@ import { Pagination } from 'react-materialize';
 import Nav from './partials/in/Nav.jsx';
 import Spinner from './partials/in/Spinner.jsx';
 import Footer from './partials/in/Footer.jsx';
-import Sources from './partials/in/Sources.jsx';
+import SelectedSources from './partials/in/SelectedSources.jsx';
+import EmptyNotification from './partials/in/EmptyNotification.jsx';
 import HeadlineSourceStore from '../stores/HeadlineSourceStore';
 import HeadlineAction from '../actions/HeadlineAction';
 
@@ -26,7 +27,7 @@ class App extends React.Component {
     this.changePage = this.changePage.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     HeadlineAction.getSources();
     HeadlineSourceStore.on('change', this.getSources);
   }
@@ -42,8 +43,11 @@ class App extends React.Component {
    */
   getSources() {
     this.setState({
-      sources: HeadlineSourceStore.getFilteredSource()
+      sources: HeadlineSourceStore.getAllSources()
     });
+    if (!localStorage.getItem('totalSource')) {
+      localStorage.setItem('totalSource', JSON.stringify(this.state.sources));
+    }
   }
 
   /**
@@ -65,25 +69,11 @@ class App extends React.Component {
       );
     }
     const { sources, currentPage } = this.state;
-    let allSources = sources;
+    const allSources = sources;
     const sourcePerPage = 9;
     const end = currentPage * sourcePerPage;
     const start = end - sourcePerPage;
-
-    allSources = allSources.slice(start, end);
-
-    const selectedSources = (
-      <div className="row source-container">
-        <Sources sources = {allSources} />
-      </div>
-    );
-
-    const emptyNotification = (
-      <div className="center-align">
-        <h4 className="white-text">No source found that matches this query</h4>
-      </div>
-    );
-
+    const displayedSources = allSources.slice(start, end);
     return (
       <div>
         <section className="page-wrap">
@@ -98,7 +88,10 @@ class App extends React.Component {
                 <Spinner />
               )
             }
-          { allSources.length === 0 ? emptyNotification : selectedSources }
+          { allSources.length === 0 ?
+            <EmptyNotification /> :
+            <SelectedSources sources={displayedSources} />
+          }
           <div className="center-align">
             {
               !!allSources && (

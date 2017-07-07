@@ -72,6 +72,48 @@ ShallowWrapper {
 }
 `;
 
+exports[`<Favourite /> should render the same <Favourite /> 1`] = `
+<div>
+  <section>
+    <div
+      className="col s12 m6"
+    >
+      <div
+        className="card grey darken-3"
+      >
+        <div
+          className="card-content white-text"
+        >
+          <span
+            className="card-title"
+          >
+            random title
+          </span>
+          <p>
+            a random description
+          </p>
+        </div>
+        <div
+          className="card-action"
+          style={
+            Object {
+              "height": "70px",
+            }
+          }
+        >
+          <button
+            className="btn right blue lighten-1"
+            onClick={[Function]}
+          >
+            View Articles
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
 exports[`<Favourite /> should render the same <FavouritesPage /> each time 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {

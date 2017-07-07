@@ -34,8 +34,11 @@ class HeadlineSourceStore extends EventEmitter {
    * @memberof HeadlineSourceStore
    */
   getFilteredSource(query) {
-    const totalSource = this.getAllSources();
-    if (!query) {
+    let totalSource = JSON.parse(localStorage.getItem('totalSource'));
+    if (!totalSource) {
+      totalSource = this.getAllSources();
+    }
+    if (!query || query === '') {
       return totalSource;
     }
     this.sources = totalSource.filter((source) => {
