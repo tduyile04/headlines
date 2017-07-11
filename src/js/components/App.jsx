@@ -62,18 +62,19 @@ class App extends React.Component {
   }
 
   render() {
-    const user = localStorage.getItem('userProfile');
-    if (!user) {
-      return (
-        <Redirect to="/"/>
-      );
-    }
     const { sources, currentPage } = this.state;
     const allSources = sources;
     const sourcePerPage = 9;
     const end = currentPage * sourcePerPage;
     const start = end - sourcePerPage;
     const displayedSources = allSources.slice(start, end);
+
+    const user = localStorage.getItem('userProfile');
+    if (!user) {
+      return (
+        <Redirect to="/"/>
+      );
+    }
     return (
       <div>
         <section className="page-wrap">
