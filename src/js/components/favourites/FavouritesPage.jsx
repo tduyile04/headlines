@@ -17,7 +17,7 @@ function FavouritesPage() {
         <NavBar user={user} />
         <h4
           className="orange-text text-accent-1"
-          style={{ 'padding-left': '10px' }}
+          style={{ paddingLeft: '10px' }}
         >
           Archives
         </h4>

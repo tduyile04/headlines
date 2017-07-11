@@ -112,7 +112,11 @@
     "setupFiles": [
       "<rootDir>/test-env.js",
       "<rootDir>/src/__mock__/localStorageMock.js",
-      "<rootDir>/bower_components/materialize/js/sideNav.js"
+      "<rootDir>/sideNav.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/js/components/login/LogInPage.jsx",
+      "<rootDir>/src/js/components/partials/in/Article.jsx"
     ],
     "collectCoverage": true
   }

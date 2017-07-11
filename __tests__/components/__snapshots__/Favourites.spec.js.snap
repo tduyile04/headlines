@@ -130,7 +130,7 @@ ShallowWrapper {
         className="orange-text text-accent-1"
         style={
             Object {
-                "padding-left": "10px",
+                "paddingLeft": "10px",
               }
         }
     >
@@ -160,7 +160,7 @@ ShallowWrapper {
             className="orange-text text-accent-1"
             style={
                   Object {
-                        "padding-left": "10px",
+                        "paddingLeft": "10px",
                       }
             }
       >
@@ -224,7 +224,7 @@ ShallowWrapper {
                     className="orange-text text-accent-1"
                     style={
                               Object {
-                                        "padding-left": "10px",
+                                        "paddingLeft": "10px",
                                       }
                     }
           >
@@ -254,7 +254,7 @@ ShallowWrapper {
                     className="orange-text text-accent-1"
                     style={
                               Object {
-                                        "padding-left": "10px",
+                                        "paddingLeft": "10px",
                                       }
                     }
           >

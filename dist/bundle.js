@@ -29606,8 +29606,6 @@ var _ref2 = _react2.default.createElement(
     'menu'
   )
 );
-// import { withRouter } from 'react-router-dom';
-
 
 var _ref3 = _react2.default.createElement(
   _reactMaterialize.SideNavItem,
@@ -63008,14 +63006,14 @@ function FavouritesPage() {
       'h4',
       {
         className: 'orange-text text-accent-1',
-        style: { 'padding-left': '10px' }
+        style: { paddingLeft: '10px' }
       },
       'Archives'
     ),
     _react2.default.createElement(
       'div',
       { className: 'row' },
-      Favourites.length === 0 && _ref,
+      !Favourites && _ref,
       Favourites.map(function (favourite, index) {
         return _react2.default.createElement(_Favourite2.default, { key: index, favourite: favourite });
       }, this)
