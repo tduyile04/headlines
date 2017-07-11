@@ -23,7 +23,7 @@ function FavouritesPage() {
         </h4>
         <div className="row">
         {
-          Favourites.length === 0 && (
+          !Favourites && (
             <div>
               <h4 className="white-text">No Favourites Added yet</h4>
             </div>

@@ -111,7 +111,8 @@
     ],
     "setupFiles": [
       "<rootDir>/test-env.js",
-      "<rootDir>/src/__mock__/localStorageMock.js"
+      "<rootDir>/src/__mock__/localStorageMock.js",
+      "<rootDir>/bower_components/materialize/js/sideNav.js"
     ],
     "collectCoverage": true
   }

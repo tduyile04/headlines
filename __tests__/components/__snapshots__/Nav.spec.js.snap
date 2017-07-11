@@ -1,0 +1,315 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Nav /> should render a snapshot of the Nav Component 1`] = `
+<nav>
+  <div
+    className="nav-wrapper grey darken-3"
+  >
+    <div
+      className="brand-logo"
+    >
+      <span
+        className="grey darken-3 sidebtn"
+      >
+        <span>
+          <span
+            className="grey darken-3"
+            data-activates="sidenav_0"
+          >
+            <i
+              className="material-icons white-text sidebtn"
+            >
+              menu
+            </i>
+          </span>
+          <ul
+            className="side-nav"
+            id="sidenav_0"
+          >
+            <li
+              className=""
+            >
+              <div
+                className="userView"
+              >
+                <div
+                  className="background"
+                >
+                  <img
+                    src="../../../../images/cloudsidebar.jpg"
+                  />
+                </div>
+                <a
+                  href="#!user"
+                >
+                  <img
+                    className="circle"
+                    src="/img/src/jack.jpg"
+                  />
+                </a>
+                <a
+                  href="#!name"
+                >
+                  <span
+                    className="white-text name"
+                  >
+                    jack doe
+                  </span>
+                </a>
+                <a
+                  href="#!email"
+                >
+                  <span
+                    className="white-text email"
+                  >
+                    jackdoe@any.com
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li
+              className=""
+            >
+              <a
+                className="subheader"
+                href="#!"
+              >
+                Favourites
+              </a>
+            </li>
+            <li
+              className=""
+            >
+              <a
+                className=""
+                href="/favourites"
+              >
+                <i
+                  className="material-icons"
+                >
+                  cloud
+                </i>
+                View Favourites
+              </a>
+            </li>
+            <li
+              className="divider"
+            >
+              <a
+                className=""
+                href="#!"
+              />
+            </li>
+            <li
+              className=""
+            >
+              <a
+                className="subheader"
+                href="#!"
+              >
+                Recently Viewed Favourites
+              </a>
+            </li>
+            <li
+              className=""
+            >
+              <a
+                className="waves-effect"
+                href="#!third"
+              >
+                Still Random Post
+              </a>
+            </li>
+          </ul>
+        </span>
+      </span>
+      <span
+        className="white-text branded-logo"
+        onClick={[Function]}
+      >
+        headlines
+      </span>
+    </div>
+    <ul
+      className="right hide-on-med-and-down orange-text text-accent-1"
+      id="nav-mobile"
+    >
+      <li>
+        <div
+          className="input-field col s6 grey darken-3"
+        >
+          <label
+            htmlFor="search"
+          >
+            <i
+              className="material-icons"
+            >
+              search
+            </i>
+          </label>
+          <input
+            id="search"
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            type="search"
+            value=""
+          />
+        </div>
+      </li>
+      <li>
+        <a
+          onClick={[Function]}
+        >
+          Log Out
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;
+
+exports[`<Nav /> should render a snapshot of the NavBar Component 1`] = `
+<nav>
+  <div
+    className="nav-wrapper grey darken-3"
+  >
+    <div
+      className="brand-logo"
+    >
+      <span
+        className="grey darken-3 sidebtn"
+      >
+        <span>
+          <span
+            className="grey darken-3"
+            data-activates="sidenav_1"
+          >
+            <i
+              className="material-icons white-text sidebtn"
+            >
+              menu
+            </i>
+          </span>
+          <ul
+            className="side-nav"
+            id="sidenav_1"
+          >
+            <li
+              className=""
+            >
+              <div
+                className="userView"
+              >
+                <div
+                  className="background"
+                >
+                  <img
+                    src="../../../../images/cloudsidebar.jpg"
+                  />
+                </div>
+                <a
+                  href="#!user"
+                >
+                  <img
+                    className="circle"
+                    src="/img/src/jack.jpg"
+                  />
+                </a>
+                <a
+                  href="#!name"
+                >
+                  <span
+                    className="white-text name"
+                  >
+                    jack doe
+                  </span>
+                </a>
+                <a
+                  href="#!email"
+                >
+                  <span
+                    className="white-text email"
+                  >
+                    jackdoe@any.com
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li
+              className=""
+            >
+              <a
+                className="subheader"
+                href="#!"
+              >
+                Favourites
+              </a>
+            </li>
+            <li
+              className=""
+            >
+              <a
+                className=""
+                href="/favourites"
+              >
+                <i
+                  className="material-icons"
+                >
+                  cloud
+                </i>
+                View Favourites
+              </a>
+            </li>
+            <li
+              className="divider"
+            >
+              <a
+                className=""
+                href="#!"
+              />
+            </li>
+            <li
+              className=""
+            >
+              <a
+                className="subheader"
+                href="#!"
+              >
+                Recently Viewed Favourites
+              </a>
+            </li>
+            <li
+              className=""
+            >
+              <a
+                className="waves-effect"
+                href="#!third"
+              >
+                Still Random Post
+              </a>
+            </li>
+          </ul>
+        </span>
+      </span>
+      <span
+        className="white-text branded-logo"
+        onClick={[Function]}
+      >
+        headlines
+      </span>
+    </div>
+    <ul
+      className="right hide-on-med-and-down orange-text text-accent-1"
+      id="nav-mobile"
+    >
+      <li>
+        <a
+          onClick={[Function]}
+        >
+          Log Out
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;

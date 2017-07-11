@@ -8,13 +8,125 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <Route
-    render={[Function]}
-/>,
+  "node": <span
+    className="grey darken-3 sidebtn"
+>
+    <SideNav
+        options={
+            Object {
+                "closeOnClick": true,
+              }
+        }
+        trigger={
+            <span
+                className="grey darken-3"
+            >
+                <i
+                    className="material-icons white-text sidebtn"
+                >
+                    menu
+                </i>
+            </span>
+        }
+    >
+        <SideNavItem
+            user={
+                Object {
+                    "background": "../../../../images/cloudsidebar.jpg",
+                    "email": "anonymous@unknown.com",
+                    "image": "../../../../images/jared.jpg",
+                    "name": "anonymous",
+                  }
+            }
+            userView={true}
+        />
+        <SideNavItem
+            subheader={true}
+        >
+            Favourites
+        </SideNavItem>
+        <SideNavItem
+            href="/favourites"
+            icon="cloud"
+        >
+            View Favourites
+        </SideNavItem>
+        <SideNavItem
+            divider={true}
+        />
+        <SideNavItem
+            subheader={true}
+        >
+            Recently Viewed Favourites
+        </SideNavItem>
+        <SideNavItem
+            href="#!third"
+            waves={true}
+        >
+            Still Random Post
+        </SideNavItem>
+    </SideNav>
+</span>,
   "nodes": Array [
-    <Route
-      render={[Function]}
-/>,
+    <span
+      className="grey darken-3 sidebtn"
+>
+      <SideNav
+            options={
+                  Object {
+                        "closeOnClick": true,
+                      }
+            }
+            trigger={
+                  <span
+                        className="grey darken-3"
+                  >
+                        <i
+                              className="material-icons white-text sidebtn"
+                        >
+                              menu
+                        </i>
+                  </span>
+            }
+      >
+            <SideNavItem
+                  user={
+                        Object {
+                              "background": "../../../../images/cloudsidebar.jpg",
+                              "email": "anonymous@unknown.com",
+                              "image": "../../../../images/jared.jpg",
+                              "name": "anonymous",
+                            }
+                  }
+                  userView={true}
+            />
+            <SideNavItem
+                  subheader={true}
+            >
+                  Favourites
+            </SideNavItem>
+            <SideNavItem
+                  href="/favourites"
+                  icon="cloud"
+            >
+                  View Favourites
+            </SideNavItem>
+            <SideNavItem
+                  divider={true}
+            />
+            <SideNavItem
+                  subheader={true}
+            >
+                  Recently Viewed Favourites
+            </SideNavItem>
+            <SideNavItem
+                  href="#!third"
+                  waves={true}
+            >
+                  Still Random Post
+            </SideNavItem>
+      </SideNav>
+</span>,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -22,7 +134,7 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <withRouter(SideBar) />,
+      "_currentElement": <SideBar />,
       "_debugID": 3,
       "_hostContainerInfo": null,
       "_hostParent": null,
@@ -50,15 +162,127 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <Route
-          render={[Function]}
-/>,
+        "_currentElement": <span
+          className="grey darken-3 sidebtn"
+>
+          <SideNav
+                    options={
+                              Object {
+                                        "closeOnClick": true,
+                                      }
+                    }
+                    trigger={
+                              <span
+                                        className="grey darken-3"
+                              >
+                                        <i
+                                                  className="material-icons white-text sidebtn"
+                                        >
+                                                  menu
+                                        </i>
+                              </span>
+                    }
+          >
+                    <SideNavItem
+                              user={
+                                        Object {
+                                                  "background": "../../../../images/cloudsidebar.jpg",
+                                                  "email": "anonymous@unknown.com",
+                                                  "image": "../../../../images/jared.jpg",
+                                                  "name": "anonymous",
+                                                }
+                              }
+                              userView={true}
+                    />
+                    <SideNavItem
+                              subheader={true}
+                    >
+                              Favourites
+                    </SideNavItem>
+                    <SideNavItem
+                              href="/favourites"
+                              icon="cloud"
+                    >
+                              View Favourites
+                    </SideNavItem>
+                    <SideNavItem
+                              divider={true}
+                    />
+                    <SideNavItem
+                              subheader={true}
+                    >
+                              Recently Viewed Favourites
+                    </SideNavItem>
+                    <SideNavItem
+                              href="#!third"
+                              waves={true}
+                    >
+                              Still Random Post
+                    </SideNavItem>
+          </SideNav>
+</span>,
         "_debugID": 4,
-        "_renderedOutput": <Route
-          render={[Function]}
-/>,
+        "_renderedOutput": <span
+          className="grey darken-3 sidebtn"
+>
+          <SideNav
+                    options={
+                              Object {
+                                        "closeOnClick": true,
+                                      }
+                    }
+                    trigger={
+                              <span
+                                        className="grey darken-3"
+                              >
+                                        <i
+                                                  className="material-icons white-text sidebtn"
+                                        >
+                                                  menu
+                                        </i>
+                              </span>
+                    }
+          >
+                    <SideNavItem
+                              user={
+                                        Object {
+                                                  "background": "../../../../images/cloudsidebar.jpg",
+                                                  "email": "anonymous@unknown.com",
+                                                  "image": "../../../../images/jared.jpg",
+                                                  "name": "anonymous",
+                                                }
+                              }
+                              userView={true}
+                    />
+                    <SideNavItem
+                              subheader={true}
+                    >
+                              Favourites
+                    </SideNavItem>
+                    <SideNavItem
+                              href="/favourites"
+                              icon="cloud"
+                    >
+                              View Favourites
+                    </SideNavItem>
+                    <SideNavItem
+                              divider={true}
+                    />
+                    <SideNavItem
+                              subheader={true}
+                    >
+                              Recently Viewed Favourites
+                    </SideNavItem>
+                    <SideNavItem
+                              href="#!third"
+                              waves={true}
+                    >
+                              Still Random Post
+                    </SideNavItem>
+          </SideNav>
+</span>,
       },
-      "_renderedNodeType": 1,
+      "_renderedNodeType": 0,
       "_rootNodeID": 0,
       "_topLevelWrapper": null,
       "_updateBatchNumber": null,
@@ -68,6 +292,6 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <withRouter(SideBar) />,
+  "unrendered": <SideBar />,
 }
 `;

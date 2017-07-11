@@ -17,7 +17,9 @@ describe('<Article />', () => {
     };
     const articles = mockArticles.articles;
     const tree = renderer.create(
-      <MemoryRouter><ArticlesPage articles={articles} history={history} /></MemoryRouter>
+      <MemoryRouter>
+        <ArticlesPage articles={articles} history={history} />
+      </MemoryRouter>
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

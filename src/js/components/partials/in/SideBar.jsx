@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import { SideNav, SideNavItem } from 'react-materialize';
 
 /**
@@ -50,4 +49,4 @@ function SideBar({ user }) {
   );
 }
 
-export default withRouter(SideBar);
+export default SideBar;
