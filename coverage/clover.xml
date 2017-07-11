@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1499786504003" clover="3.2.0">
-  <project timestamp="1499786504004" name="All files">
-    <metrics statements="187" coveredstatements="163" conditionals="455" coveredconditionals="275" methods="179" coveredmethods="155" elements="821" coveredelements="593" complexity="0" loc="187" ncloc="187" packages="9" files="22" classes="22">
+<coverage generated="1499792135034" clover="3.2.0">
+  <project timestamp="1499792135034" name="All files">
+    <metrics statements="172" coveredstatements="155" conditionals="420" coveredconditionals="255" methods="164" coveredmethods="145" elements="756" coveredelements="555" complexity="0" loc="172" ncloc="172" packages="9" files="21" classes="21">
       <package name="actions">
         <metrics statements="7" coveredstatements="7" conditionals="14" coveredconditionals="9" methods="14" coveredmethods="11"/>
         <file name="HeadlineAction.js" path="/Users/andeladeveloper/Desktop/headlines/src/js/actions/HeadlineAction.js">
@@ -91,7 +91,7 @@
         </file>
       </package>
       <package name="components.partials.in">
-        <metrics statements="75" coveredstatements="63" conditionals="183" coveredconditionals="112" methods="74" coveredmethods="62"/>
+        <metrics statements="60" coveredstatements="55" conditionals="148" coveredconditionals="92" methods="59" coveredmethods="52"/>
         <file name="EmptyNotification.jsx" path="/Users/andeladeveloper/Desktop/headlines/src/js/components/partials/in/EmptyNotification.jsx">
           <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
           <line num="1" count="2" type="cond" truecount="3" falsecount="1"/>
@@ -115,24 +115,6 @@
           <line num="1" count="4" type="cond" truecount="3" falsecount="1"/>
           <line num="3" count="4" type="stmt"/>
           <line num="4" count="1" type="stmt"/>
-        </file>
-        <file name="Nav.jsx" path="/Users/andeladeveloper/Desktop/headlines/src/js/components/partials/in/Nav.jsx">
-          <metrics statements="15" coveredstatements="8" conditionals="35" coveredconditionals="20" methods="15" coveredmethods="10"/>
-          <line num="1" count="12" type="cond" truecount="5" falsecount="3"/>
-          <line num="5" count="8" type="cond" truecount="14" falsecount="9"/>
-          <line num="13" count="2" type="stmt"/>
-          <line num="15" count="1" type="cond" truecount="1" falsecount="1"/>
-          <line num="31" count="2" type="stmt"/>
-          <line num="50" count="0" type="stmt"/>
-          <line num="62" count="0" type="stmt"/>
-          <line num="63" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="64" count="0" type="stmt"/>
-          <line num="65" count="0" type="stmt"/>
-          <line num="76" count="0" type="stmt"/>
-          <line num="77" count="0" type="stmt"/>
-          <line num="82" count="1" type="stmt"/>
-          <line num="117" count="2" type="stmt"/>
-          <line num="120" count="2" type="stmt"/>
         </file>
         <file name="NavBar.jsx" path="/Users/andeladeveloper/Desktop/headlines/src/js/components/partials/in/NavBar.jsx">
           <metrics statements="10" coveredstatements="8" conditionals="33" coveredconditionals="20" methods="11" coveredmethods="10"/>

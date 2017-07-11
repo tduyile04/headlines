@@ -116,7 +116,8 @@
     ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/src/js/components/login/LogInPage.jsx",
-      "<rootDir>/src/js/components/partials/in/Article.jsx"
+      "<rootDir>/src/js/components/partials/in/Article.jsx",
+      "<rootDir>/src/js/components/partials/in/Nav.jsx"
     ],
     "collectCoverage": true
   }
