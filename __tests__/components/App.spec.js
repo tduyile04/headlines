@@ -10,7 +10,7 @@ describe('<App />', () => {
   it('should render 1 <App />', () => {
     expect(wrapper).toHaveLength(1);
   });
-  it('should render 1 <ArticleDetailsPage />', () => {
+  xit('should render 1 <ArticleDetailsPage />', () => {
     const tree = renderer.create(
       <MemoryRouter><App /></MemoryRouter>
     ).toJSON();

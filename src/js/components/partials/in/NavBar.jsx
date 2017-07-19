@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import SideBar from '../in/SideBar.jsx';
 
@@ -24,7 +23,8 @@ class NavBar extends React.Component {
    */
   logout() {
     localStorage.removeItem('userProfile');
-    this.props.history.replace('/');
+    this.props.location.pathname = '/';
+    location.reload();
   }
 
   render() {
@@ -36,7 +36,7 @@ class NavBar extends React.Component {
             <SideBar user={user} />
             <span
               className="white-text branded-logo"
-              onClick={this.props.history.goBack}
+              onClick={() => this.props.history.push('/sources')}
             >
               headlines
             </span>
@@ -52,10 +52,5 @@ class NavBar extends React.Component {
     );
   }
 }
-
-NavBar.propTypes = {
-  history: PropTypes.object,
-  user: PropTypes.string
-};
 
 export default withRouter(NavBar);

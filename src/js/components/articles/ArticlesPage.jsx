@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import 'react-select/dist/react-select.css';
 import HeadlineAction from '../../actions/HeadlineAction';
@@ -58,11 +57,6 @@ class ArticlePage extends React.Component {
 
   render() {
     const user = localStorage.getItem('userProfile');
-    if (!user) {
-      return (
-        <Redirect to="/"/>
-      );
-    }
     const { articles, sourceName } = this.state;
     return (
       <section>

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import {
   ShareButtons,
@@ -66,12 +65,16 @@ class Article extends React.Component {
     article.title = title;
     article.url = url;
     article.description = description;
-    let articleCollections = JSON.parse(localStorage.getItem('saved-articles'));
-    if (typeof articleCollections === 'object' && articleCollections === null) {
+    let articleCollections;
+    try {
+      articleCollections = JSON.parse(localStorage.getItem('saved-articles'));
+    } catch (e) {
+      articleCollections = null;
+    }
+    if (articleCollections === null) {
       articleCollections = [];
       articleCollections.push(article);
-    }
-    if (articleCollections.length > 0) {
+    } else {
       articleCollections.push(article);
     }
     localStorage.setItem('saved-articles', JSON.stringify(articleCollections));
@@ -189,10 +192,5 @@ class Article extends React.Component {
     );
   }
 }
-
-Article.propTypes = {
-  article: PropTypes.object,
-  history: PropTypes.object
-};
 
 export default withRouter(Article);

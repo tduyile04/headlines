@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Route,
   Switch,
   browserHistory,
 } from 'react-router-dom';
@@ -10,29 +9,72 @@ import LogInPage from '../components/login/LogInPage.jsx';
 import ArticlesPage from '../components/articles/ArticlesPage.jsx';
 import ArticleDetailsPage from '../components/articles/ArticleDetailsPage.jsx';
 import FavouritesPage from '../components/favourites/FavouritesPage.jsx';
+import PrivateRoute from './PrivateRoute.jsx';
+import PublicRoute from './PublicRoute.jsx';
+
+class Routes extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      authenticated: false
+    };
+    this.checkAuthentication = this.checkAuthentication.bind(this);
+  }
+
+  componentDidMount() {
+    this.checkAuthentication();
+  }
 
 /**
- * Handles the routing for all the different app paths
- * @returns null
+ * Handles the authentication for the user via its id token
+ * @returns {boolean} true if authenticated, false otherwise
  */
-function Routes() {
-  return (
-  <Router history={browserHistory}>
-    <Switch>
-      <Route exact path="/" component={LogInPage} />
-      <Route path="/sources" component= {App} />
-      <Route
-        path="/articles/:title"
-        component= {ArticlesPage} />
-      <Route
-        path="/article/detail"
-        component={ArticleDetailsPage} />
-        <Route path="/favourites" component={FavouritesPage} />
-    </Switch>
-  </Router>
-  );
-}
+  checkAuthentication() {
+    if (localStorage.getItem('userProfile')) {
+      this.setState({
+        authenticated: true
+      });
+    } else {
+      this.setState({
+        authenticated: false
+      });
+    }
+  }
 
+  render() {
+    return (
+      <Router history={browserHistory}>
+        <Switch>
+          <PublicRoute
+            exact path="/"
+            component={LogInPage}
+            authenticated={this.state.authenticated}
+          />
+          <PrivateRoute
+            path="/favourites"
+            component={FavouritesPage}
+            authenticated={this.state.authenticated}
+          />
+          <PrivateRoute
+            path="/sources"
+            component= {App}
+            authenticated={this.state.authenticated}
+          />
+          <PrivateRoute
+            path="/articles/:title"
+            component= {ArticlesPage}
+            authenticated={this.state.authenticated}
+          />
+          <PrivateRoute
+            path="/article/detail"
+            component={ArticleDetailsPage}
+            authenticated={this.state.authenticated}
+          />
+        </Switch>
+      </Router>
+    );
+  }
+}
 export default Routes;
 
 

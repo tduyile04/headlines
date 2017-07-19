@@ -270,7 +270,223 @@ exports[`<Article /> should render 1 <Article /> 1`] = `
 </div>
 `;
 
-exports[`<Article /> should render 1 <ArticleDetailsPage /> 1`] = `null`;
+exports[`<Article /> should render 1 <ArticleDetailsPage /> 1`] = `
+<section>
+  <nav>
+    <div
+      className="nav-wrapper grey darken-3"
+    >
+      <div
+        className="brand-logo"
+      >
+        <span
+          className="grey darken-3 sidebtn"
+        >
+          <span>
+            <span
+              className="grey darken-3"
+              data-activates="sidenav_0"
+            >
+              <i
+                className="material-icons white-text sidebtn"
+              >
+                menu
+              </i>
+            </span>
+            <ul
+              className="side-nav"
+              id="sidenav_0"
+            >
+              <li
+                className=""
+              >
+                <div
+                  className="userView"
+                >
+                  <div
+                    className="background"
+                  >
+                    <img
+                      src="../../../../images/cloudsidebar.jpg"
+                    />
+                  </div>
+                  <a
+                    href="#!user"
+                  >
+                    <img
+                      className="circle"
+                      src="../../../../images/login2.jpg"
+                    />
+                  </a>
+                  <a
+                    href="#!name"
+                  >
+                    <span
+                      className="white-text name"
+                    >
+                      anonymous
+                    </span>
+                  </a>
+                  <a
+                    href="#!email"
+                  >
+                    <span
+                      className="white-text email"
+                    >
+                      anonymous@unknown.com
+                    </span>
+                  </a>
+                </div>
+              </li>
+              <li
+                className=""
+                onClick={[Function]}
+              >
+                <a
+                  className=""
+                  href="#!"
+                >
+                  View Favourites
+                </a>
+              </li>
+              <li
+                className="divider"
+              >
+                <a
+                  className=""
+                  href="#!"
+                />
+              </li>
+            </ul>
+          </span>
+        </span>
+        <span
+          className="white-text branded-logo"
+          onClick={[Function]}
+        >
+          headlines
+        </span>
+      </div>
+      <ul
+        className="right hide-on-med-and-down orange-text text-accent-1"
+        id="nav-mobile"
+      >
+        <li>
+          <a
+            onClick={[Function]}
+          >
+            Log Out
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div
+    className="preloader-wrapper big active center-align"
+  >
+    <div
+      className="spinner-layer spinner-blue center-align"
+    >
+      <div
+        className="circle-clipper left"
+      >
+        <div
+          className="circle "
+        />
+      </div>
+      <div
+        className="gap-patch"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+      <div
+        className="circle-clipper right"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+    </div>
+    <div
+      className="spinner-layer spinner-red center-align"
+    >
+      <div
+        className="circle-clipper left"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+      <div
+        className="gap-patch"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+      <div
+        className="circle-clipper right"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+    </div>
+    <div
+      className="spinner-layer spinner-yellow center-align"
+    >
+      <div
+        className="circle-clipper left"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+      <div
+        className="gap-patch"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+      <div
+        className="circle-clipper right"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+    </div>
+    <div
+      className="spinner-layer spinner-green center-align"
+    >
+      <div
+        className="circle-clipper left"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+      <div
+        className="gap-patch"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+      <div
+        className="circle-clipper right"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;
 
 exports[`<Article /> should render 1 <ArticlePage /> 1`] = `
 ShallowWrapper {
@@ -280,15 +496,25 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <Redirect
-    push={false}
-    to="/"
-/>,
+  "node": <section>
+    <div>
+        <withRouter(NavBar)
+            user={null}
+        />
+        <Spinner />
+    </div>
+    <Footer />
+</section>,
   "nodes": Array [
-    <Redirect
-      push={false}
-      to="/"
-/>,
+    <section>
+      <div>
+            <withRouter(NavBar)
+                  user={null}
+            />
+            <Spinner />
+      </div>
+      <Footer />
+</section>,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -305,7 +531,7 @@ ShallowWrapper {
                       }
         }
 />,
-      "_debugID": 85,
+      "_debugID": 81,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": ArticlePage {
@@ -344,17 +570,27 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <Redirect
-          push={false}
-          to="/"
-/>,
-        "_debugID": 86,
-        "_renderedOutput": <Redirect
-          push={false}
-          to="/"
-/>,
+        "_currentElement": <section>
+          <div>
+                    <withRouter(NavBar)
+                              user={null}
+                    />
+                    <Spinner />
+          </div>
+          <Footer />
+</section>,
+        "_debugID": 82,
+        "_renderedOutput": <section>
+          <div>
+                    <withRouter(NavBar)
+                              user={null}
+                    />
+                    <Spinner />
+          </div>
+          <Footer />
+</section>,
       },
-      "_renderedNodeType": 1,
+      "_renderedNodeType": 0,
       "_rootNodeID": 0,
       "_topLevelWrapper": null,
       "_updateBatchNumber": null,
