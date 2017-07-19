@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import HeadlineAction from '../../../actions/HeadlineAction';
 
 class Favourite extends React.Component {
@@ -45,10 +44,5 @@ class Favourite extends React.Component {
     );
   }
 }
-
-Favourite.propTypes = {
-  favourite: PropTypes.object,
-  history: PropTypes.object
-};
 
 export default withRouter(Favourite);

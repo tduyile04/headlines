@@ -1,19 +1,27 @@
 import React from 'react';
 import { SideNav, SideNavItem } from 'react-materialize';
+import { withRouter } from 'react-router-dom';
+
+/**
+ * Transports from current page to the favourites page
+ */
+function goToFavourites({ history }) {
+  history.push('/favourites');
+}
 
 /**
  * SideBar displaying the user profile and user saved
  * articles in the favourites
  * @param {any} user user object containing the profile data
- * @returns
+ * @returns {component}
  */
-function SideBar({ user }) {
+function SideBar({ user, history }) {
   let userObject;
   try {
     userObject = JSON.parse(user);
   } catch (e) {
     userObject = {
-      image: '../../../../images/jared.jpg',
+      image: '../../../../images/login2.jpg',
       name: 'anonymous',
       email: 'anonymous@unknown.com'
     };
@@ -37,16 +45,15 @@ function SideBar({ user }) {
             email: userObject.email
           }}
         />
-        <SideNavItem subheader>Favourites</SideNavItem>
-        <SideNavItem icon="cloud" href="/favourites">
+        <SideNavItem
+          onClick={() => goToFavourites({ history })}
+        >
           View Favourites
         </SideNavItem>
         <SideNavItem divider />
-        <SideNavItem subheader>Recently Viewed Favourites</SideNavItem>
-        <SideNavItem waves href="#!third">Still Random Post</SideNavItem>
       </SideNav>
     </span>
   );
 }
 
-export default SideBar;
+export default withRouter(SideBar);

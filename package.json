@@ -4,6 +4,7 @@
   "description": "A modern rss feeds that allows you view headlines from different news sources",
   "main": "index.js",
   "scripts": {
+    "postinstall": "NODE_ENV=production webpack --config webpack.prod.config.js --progress --colors",
     "dev": "webpack-dev-server --config webpack.config.js --inline --content-base ./src --hot",
     "start": "NODE_ENV=production node server.js",
     "test": "jest -u"
@@ -64,6 +65,7 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "connect-history-api-fallback": "^1.3.0",
     "css-loader": "^0.28.4",
     "dotenv": "^4.0.0",
@@ -85,6 +87,7 @@
     "react-select": "^1.0.0-rc.5",
     "react-share": "^1.15.0",
     "resolve-url-loader": "^2.0.2",
+    "rest": "^2.0.0",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.2",
     "superagent": "^3.5.2",

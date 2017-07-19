@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/Users/andeladeveloper/Desktop/headlines/dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 589);
+/******/ 	return __webpack_require__(__webpack_require__.s = 591);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -8421,11 +8421,11 @@ var _HeadlineDispatcher = __webpack_require__(82);
 
 var _HeadlineDispatcher2 = _interopRequireDefault(_HeadlineDispatcher);
 
-var _HeadlineAPI = __webpack_require__(583);
+var _HeadlineAPI = __webpack_require__(585);
 
 var _HeadlineAPI2 = _interopRequireDefault(_HeadlineAPI);
 
-var _ArticleScraperAPI = __webpack_require__(582);
+var _ArticleScraperAPI = __webpack_require__(584);
 
 var _ArticleScraperAPI2 = _interopRequireDefault(_ArticleScraperAPI);
 
@@ -17792,11 +17792,14 @@ var NavBar = function (_React$Component) {
     key: 'logout',
     value: function logout() {
       localStorage.removeItem('userProfile');
-      this.props.history.replace('/');
+      this.props.location.pathname = '/';
+      location.reload();
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var user = this.props.user;
 
       return _react2.default.createElement(
@@ -17813,7 +17816,9 @@ var NavBar = function (_React$Component) {
               'span',
               {
                 className: 'white-text branded-logo',
-                onClick: this.props.history.goBack
+                onClick: function onClick() {
+                  return _this2.props.history.push('/sources');
+                }
               },
               'headlines'
             )
@@ -17961,7 +17966,7 @@ exports.default = Spinner;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(585);
+var content = __webpack_require__(587);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -28423,7 +28428,7 @@ util.inherits = __webpack_require__(42);
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(588);
+var debugUtil = __webpack_require__(590);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -29588,15 +29593,27 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactMaterialize = __webpack_require__(208);
 
+var _reactRouterDom = __webpack_require__(18);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Transports from current page to the favourites page
+ */
+function goToFavourites(_ref) {
+  var history = _ref.history;
+
+  history.push('/favourites');
+}
 
 /**
  * SideBar displaying the user profile and user saved
  * articles in the favourites
  * @param {any} user user object containing the profile data
- * @returns
+ * @returns {component}
  */
-var _ref2 = _react2.default.createElement(
+
+var _ref3 = _react2.default.createElement(
   'span',
   {
     className: 'grey darken-3' },
@@ -29607,34 +29624,11 @@ var _ref2 = _react2.default.createElement(
   )
 );
 
-var _ref3 = _react2.default.createElement(
-  _reactMaterialize.SideNavItem,
-  { subheader: true },
-  'Favourites'
-);
+var _ref4 = _react2.default.createElement(_reactMaterialize.SideNavItem, { divider: true });
 
-var _ref4 = _react2.default.createElement(
-  _reactMaterialize.SideNavItem,
-  { icon: 'cloud', href: '/favourites' },
-  'View Favourites'
-);
-
-var _ref5 = _react2.default.createElement(_reactMaterialize.SideNavItem, { divider: true });
-
-var _ref6 = _react2.default.createElement(
-  _reactMaterialize.SideNavItem,
-  { subheader: true },
-  'Recently Viewed Favourites'
-);
-
-var _ref7 = _react2.default.createElement(
-  _reactMaterialize.SideNavItem,
-  { waves: true, href: '#!third' },
-  'Still Random Post'
-);
-
-function SideBar(_ref) {
-  var user = _ref.user;
+function SideBar(_ref2) {
+  var user = _ref2.user,
+      history = _ref2.history;
 
   var userObject = void 0;
   try {
@@ -29652,7 +29646,7 @@ function SideBar(_ref) {
     _react2.default.createElement(
       _reactMaterialize.SideNav,
       {
-        trigger: _ref2,
+        trigger: _ref3,
         options: { closeOnClick: true }
       },
       _react2.default.createElement(_reactMaterialize.SideNavItem, { userView: true,
@@ -29663,16 +29657,21 @@ function SideBar(_ref) {
           email: userObject.email
         }
       }),
-      _ref3,
-      _ref4,
-      _ref5,
-      _ref6,
-      _ref7
+      _react2.default.createElement(
+        _reactMaterialize.SideNavItem,
+        {
+          onClick: function onClick() {
+            return goToFavourites({ history: history });
+          }
+        },
+        'View Favourites'
+      ),
+      _ref4
     )
   );
 }
 
-exports.default = SideBar;
+exports.default = (0, _reactRouterDom.withRouter)(SideBar);
 
 /***/ }),
 /* 227 */
@@ -29681,7 +29680,7 @@ exports.default = SideBar;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(584);
+var content = __webpack_require__(586);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -30079,7 +30078,7 @@ var _reactDom = __webpack_require__(57);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Routes = __webpack_require__(578);
+var _Routes = __webpack_require__(580);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
@@ -41959,7 +41958,7 @@ exports.default = _alertContainer2.default;
 "use strict";
 
 
-var map = __webpack_require__(586);
+var map = __webpack_require__(588);
 
 var convert = function convert(key) {
   var val = map[key.toLowerCase()];
@@ -62456,8 +62455,6 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(18);
-
 var _reactMaterialize = __webpack_require__(208);
 
 var _Nav = __webpack_require__(574);
@@ -62480,7 +62477,7 @@ var _EmptyNotification = __webpack_require__(572);
 
 var _EmptyNotification2 = _interopRequireDefault(_EmptyNotification);
 
-var _HeadlineSourceStore = __webpack_require__(581);
+var _HeadlineSourceStore = __webpack_require__(583);
 
 var _HeadlineSourceStore2 = _interopRequireDefault(_HeadlineSourceStore);
 
@@ -62502,9 +62499,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @class App
  * @extends {React.Component}
  */
-var _ref = _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
-
-var _ref2 = _react2.default.createElement(
+var _ref = _react2.default.createElement(
   'h5',
   {
     className: 'orange-text text-accent-1 center-align'
@@ -62512,11 +62507,11 @@ var _ref2 = _react2.default.createElement(
   'News Sources'
 );
 
-var _ref3 = _react2.default.createElement(_Spinner2.default, null);
+var _ref2 = _react2.default.createElement(_Spinner2.default, null);
 
-var _ref4 = _react2.default.createElement(_EmptyNotification2.default, null);
+var _ref3 = _react2.default.createElement(_EmptyNotification2.default, null);
 
-var _ref5 = _react2.default.createElement(_Footer2.default, { className: 'page-footer' });
+var _ref4 = _react2.default.createElement(_Footer2.default, { className: 'page-footer' });
 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
@@ -62583,10 +62578,6 @@ var App = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var user = localStorage.getItem('userProfile');
-      if (!user) {
-        return _ref;
-      }
       var _state = this.state,
           sources = _state.sources,
           currentPage = _state.currentPage;
@@ -62596,6 +62587,8 @@ var App = function (_React$Component) {
       var end = currentPage * sourcePerPage;
       var start = end - sourcePerPage;
       var displayedSources = allSources.slice(start, end);
+
+      var user = localStorage.getItem('userProfile');
       return _react2.default.createElement(
         'div',
         null,
@@ -62603,9 +62596,9 @@ var App = function (_React$Component) {
           'section',
           { className: 'page-wrap' },
           _react2.default.createElement(_Nav2.default, { user: user }),
-          _ref2,
-          !allSources && _ref3,
-          allSources.length === 0 ? _ref4 : _react2.default.createElement(_SelectedSources2.default, { sources: displayedSources }),
+          _ref,
+          !allSources && _ref2,
+          allSources.length === 0 ? _ref3 : _react2.default.createElement(_SelectedSources2.default, { sources: displayedSources }),
           _react2.default.createElement(
             'div',
             { className: 'center-align' },
@@ -62619,7 +62612,7 @@ var App = function (_React$Component) {
             })
           )
         ),
-        _ref5
+        _ref4
       );
     }
   }]);
@@ -62646,8 +62639,6 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(18);
-
 var _reactRenderHtml = __webpack_require__(491);
 
 var _reactRenderHtml2 = _interopRequireDefault(_reactRenderHtml);
@@ -62664,7 +62655,7 @@ var _Footer = __webpack_require__(80);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _HeadlineScrapeStore = __webpack_require__(580);
+var _HeadlineScrapeStore = __webpack_require__(582);
 
 var _HeadlineScrapeStore2 = _interopRequireDefault(_HeadlineScrapeStore);
 
@@ -62681,17 +62672,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @class ArticleDetails
  * @extends {React.Component}
  */
-var _ref = _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
-
-var _ref2 = _react2.default.createElement(
+var _ref = _react2.default.createElement(
   'p',
   { className: 'white-text' },
   'No contents available'
 );
 
-var _ref3 = _react2.default.createElement(_Footer2.default, null);
+var _ref2 = _react2.default.createElement(_Footer2.default, null);
 
-var _ref4 = _react2.default.createElement(_Spinner2.default, null);
+var _ref3 = _react2.default.createElement(_Spinner2.default, null);
 
 var ArticleDetailsPage = function (_React$Component) {
   _inherits(ArticleDetailsPage, _React$Component);
@@ -62731,9 +62720,6 @@ var ArticleDetailsPage = function (_React$Component) {
     key: 'render',
     value: function render() {
       var user = localStorage.getItem('userProfile');
-      if (!user) {
-        return _ref;
-      }
       var fullArticle = this.state.fullArticle;
 
       return _react2.default.createElement(
@@ -62760,11 +62746,11 @@ var ArticleDetailsPage = function (_React$Component) {
             _react2.default.createElement(
               'section',
               { className: 'white-text scraped-content' },
-              typeof fullArticle !== 'string' ? (0, _reactRenderHtml2.default)(fullArticle.content) : _ref2
+              typeof fullArticle !== 'string' ? (0, _reactRenderHtml2.default)(fullArticle.content) : _ref
             )
           ),
-          _ref3
-        ) : _ref4
+          _ref2
+        ) : _ref3
       );
     }
   }]);
@@ -62791,8 +62777,6 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(18);
-
 var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -62803,7 +62787,7 @@ var _HeadlineAction = __webpack_require__(63);
 
 var _HeadlineAction2 = _interopRequireDefault(_HeadlineAction);
 
-var _HeadlineArticleStore = __webpack_require__(579);
+var _HeadlineArticleStore = __webpack_require__(581);
 
 var _HeadlineArticleStore2 = _interopRequireDefault(_HeadlineArticleStore);
 
@@ -62837,11 +62821,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @class ArticlePage
  * @extends {React.Component}
  */
-var _ref = _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
+var _ref = _react2.default.createElement(_Spinner2.default, null);
 
-var _ref2 = _react2.default.createElement(_Spinner2.default, null);
-
-var _ref3 = _react2.default.createElement(_Footer2.default, null);
+var _ref2 = _react2.default.createElement(_Footer2.default, null);
 
 var ArticlePage = function (_React$Component) {
   _inherits(ArticlePage, _React$Component);
@@ -62900,9 +62882,6 @@ var ArticlePage = function (_React$Component) {
     key: 'render',
     value: function render() {
       var user = localStorage.getItem('userProfile');
-      if (!user) {
-        return _ref;
-      }
       var _state = this.state,
           articles = _state.articles,
           sourceName = _state.sourceName;
@@ -62914,7 +62893,7 @@ var ArticlePage = function (_React$Component) {
           'div',
           null,
           _react2.default.createElement(_NavBar2.default, { user: user }),
-          _ref2
+          _ref
         ),
         !!articles &&
         // display articles
@@ -62939,7 +62918,7 @@ var ArticlePage = function (_React$Component) {
             }, this)
           )
         ),
-        _ref3
+        _ref2
       );
     }
   }]);
@@ -62997,7 +62976,12 @@ var _ref2 = _react2.default.createElement(_Footer2.default, null);
 function FavouritesPage() {
   var user = localStorage.getItem('userProfile');
   var stringTypeFavourites = localStorage.getItem('saved-articles');
-  var Favourites = JSON.parse(stringTypeFavourites);
+  var Favourites = void 0;
+  try {
+    Favourites = JSON.parse(stringTypeFavourites);
+  } catch (e) {
+    Favourites = '';
+  }
   return _react2.default.createElement(
     'div',
     null,
@@ -63067,7 +63051,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @class logInPage
  * @extends {React.Component}
  */
-var _ref = _react2.default.createElement('img', { src: '../images/login2.jpg', className: 'wall', alt: '' });
+var _ref = _react2.default.createElement('img', { src: '../images/headlines.jpg', className: 'wall', alt: '' });
 
 var _ref2 = _react2.default.createElement(
   'h3',
@@ -63120,6 +63104,7 @@ var LogInPage = function (_React$Component) {
       userProfile.idToken = response.googleId;
       localStorage.setItem('userProfile', JSON.stringify(userProfile));
       this.props.history.push('/sources');
+      location.reload();
     }
   }, {
     key: 'render',
@@ -63169,8 +63154,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -63291,12 +63274,16 @@ var Article = function (_React$Component) {
       article.title = title;
       article.url = url;
       article.description = description;
-      var articleCollections = JSON.parse(localStorage.getItem('saved-articles'));
-      if ((typeof articleCollections === 'undefined' ? 'undefined' : _typeof(articleCollections)) === 'object' && articleCollections === null) {
+      var articleCollections = void 0;
+      try {
+        articleCollections = JSON.parse(localStorage.getItem('saved-articles'));
+      } catch (e) {
+        articleCollections = null;
+      }
+      if (articleCollections === null) {
         articleCollections = [];
         articleCollections.push(article);
-      }
-      if (articleCollections.length > 0) {
+      } else {
         articleCollections.push(article);
       }
       localStorage.setItem('saved-articles', JSON.stringify(articleCollections));
@@ -63758,7 +63745,8 @@ var Nav = function (_React$Component) {
     key: 'logout',
     value: function logout() {
       localStorage.removeItem('userProfile');
-      this.props.history.replace('/');
+      this.props.location.pathname = '/';
+      location.reload();
     }
   }, {
     key: 'render',
@@ -63897,7 +63885,7 @@ var _reactRouterDom = __webpack_require__(18);
 
 __webpack_require__(227);
 
-var _logo = __webpack_require__(587);
+var _logo = __webpack_require__(589);
 
 var _logo2 = _interopRequireDefault(_logo);
 
@@ -64127,6 +64115,102 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(18);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+/**
+ * Protects the routes; checks if a user has been authenticated
+ * before gaining access to the routes
+ * @param {any} { component: Component, authenticated, ...rest }
+ * @returns {component} destination if logged in || log in page if not
+ */
+function PrivateRoute(_ref) {
+  var Component = _ref.component,
+      authenticated = _ref.authenticated,
+      rest = _objectWithoutProperties(_ref, ['component', 'authenticated']);
+
+  return _react2.default.createElement(_reactRouterDom.Route, _extends({}, rest, {
+    render: function render(props) {
+      return authenticated ? _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, {
+        to: { pathname: '/',
+          state: { from: props.location } }
+      });
+    }
+  }));
+}
+
+exports.default = PrivateRoute;
+
+/***/ }),
+/* 579 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(18);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+/**
+ * Allows access to all users with no privacy restriction
+ * @param {any} { component: Component, authenticated, ...rest }
+ * @returns {component}
+ */
+var _ref2 = _react2.default.createElement(_reactRouterDom.Redirect, { to: '/sources' });
+
+function PublicRoute(_ref) {
+  var Component = _ref.component,
+      authenticated = _ref.authenticated,
+      rest = _objectWithoutProperties(_ref, ['component', 'authenticated']);
+
+  return _react2.default.createElement(_reactRouterDom.Route, _extends({}, rest, {
+    render: function render(props) {
+      return authenticated === false ? _react2.default.createElement(Component, props) : _ref2;
+    }
+  }));
+}
+
+exports.default = PublicRoute;
+
+/***/ }),
+/* 580 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
@@ -64153,38 +64237,107 @@ var _FavouritesPage = __webpack_require__(569);
 
 var _FavouritesPage2 = _interopRequireDefault(_FavouritesPage);
 
+var _PrivateRoute = __webpack_require__(578);
+
+var _PrivateRoute2 = _interopRequireDefault(_PrivateRoute);
+
+var _PublicRoute = __webpack_require__(579);
+
+var _PublicRoute2 = _interopRequireDefault(_PublicRoute);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Handles the routing for all the different app paths
- * @returns null
- */
-var _ref = _react2.default.createElement(
-  _reactRouterDom.BrowserRouter,
-  { history: _reactRouterDom.browserHistory },
-  _react2.default.createElement(
-    _reactRouterDom.Switch,
-    null,
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _LogInPage2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/sources', component: _App2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, {
-      path: '/articles/:title',
-      component: _ArticlesPage2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, {
-      path: '/article/detail',
-      component: _ArticleDetailsPage2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/favourites', component: _FavouritesPage2.default })
-  )
-);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function Routes() {
-  return _ref;
-}
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Routes = function (_React$Component) {
+  _inherits(Routes, _React$Component);
+
+  function Routes() {
+    _classCallCheck(this, Routes);
+
+    var _this = _possibleConstructorReturn(this, (Routes.__proto__ || Object.getPrototypeOf(Routes)).call(this));
+
+    _this.state = {
+      authenticated: false
+    };
+    _this.checkAuthentication = _this.checkAuthentication.bind(_this);
+    return _this;
+  }
+
+  _createClass(Routes, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.checkAuthentication();
+    }
+
+    /**
+     * Handles the authentication for the user via its id token
+     * @returns {boolean} true if authenticated, false otherwise
+     */
+
+  }, {
+    key: 'checkAuthentication',
+    value: function checkAuthentication() {
+      if (localStorage.getItem('userProfile')) {
+        this.setState({
+          authenticated: true
+        });
+      } else {
+        this.setState({
+          authenticated: false
+        });
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        _reactRouterDom.BrowserRouter,
+        { history: _reactRouterDom.browserHistory },
+        _react2.default.createElement(
+          _reactRouterDom.Switch,
+          null,
+          _react2.default.createElement(_PublicRoute2.default, {
+            exact: true, path: '/',
+            component: _LogInPage2.default,
+            authenticated: this.state.authenticated
+          }),
+          _react2.default.createElement(_PrivateRoute2.default, {
+            path: '/favourites',
+            component: _FavouritesPage2.default,
+            authenticated: this.state.authenticated
+          }),
+          _react2.default.createElement(_PrivateRoute2.default, {
+            path: '/sources',
+            component: _App2.default,
+            authenticated: this.state.authenticated
+          }),
+          _react2.default.createElement(_PrivateRoute2.default, {
+            path: '/articles/:title',
+            component: _ArticlesPage2.default,
+            authenticated: this.state.authenticated
+          }),
+          _react2.default.createElement(_PrivateRoute2.default, {
+            path: '/article/detail',
+            component: _ArticleDetailsPage2.default,
+            authenticated: this.state.authenticated
+          })
+        )
+      );
+    }
+  }]);
+
+  return Routes;
+}(_react2.default.Component);
 
 exports.default = Routes;
 
 /***/ }),
-/* 579 */
+/* 581 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64275,7 +64428,7 @@ _HeadlineDispatcher2.default.register(headlineArticleStore.handleActions.bind(he
 exports.default = headlineArticleStore;
 
 /***/ }),
-/* 580 */
+/* 582 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64362,7 +64515,7 @@ _HeadlineDispatcher2.default.register(headlineScrapeStore.handleActions.bind(hea
 exports.default = headlineScrapeStore;
 
 /***/ }),
-/* 581 */
+/* 583 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64483,7 +64636,7 @@ _HeadlineDispatcher2.default.register(headlineSourceStore.handleActions.bind(hea
 exports.default = headlineSourceStore;
 
 /***/ }),
-/* 582 */
+/* 584 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64533,7 +64686,7 @@ var Scraper = function () {
 exports.default = Scraper;
 
 /***/ }),
-/* 583 */
+/* 585 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64590,7 +64743,7 @@ var HeadlineAPI = function () {
 exports.default = HeadlineAPI;
 
 /***/ }),
-/* 584 */
+/* 586 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(160)(undefined);
@@ -64604,7 +64757,7 @@ exports.push([module.i, "/**\n * React Select\n * ============\n * Created by Je
 
 
 /***/ }),
-/* 585 */
+/* 587 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(160)(undefined);
@@ -64618,7 +64771,7 @@ exports.push([module.i, "html, body {\n  height: 100%; }\n\nbody {\n  display: f
 
 
 /***/ }),
-/* 586 */
+/* 588 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -64856,7 +65009,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 587 */
+/* 589 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -64933,13 +65086,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 588 */
+/* 590 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 589 */
+/* 591 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(229);

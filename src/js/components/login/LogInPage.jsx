@@ -32,13 +32,14 @@ class LogInPage extends React.Component {
     userProfile.idToken = response.googleId;
     localStorage.setItem('userProfile', JSON.stringify(userProfile));
     this.props.history.push('/sources');
+    location.reload();
   }
 
   render() {
     const clientId = process.env.CLIENT_ID;
     return (
       <div className="wallpaper">
-        <img src="../images/login2.jpg" className="wall" alt="" />
+        <img src="../images/headlines.jpg" className="wall" alt="" />
         <section className="tagline right-align">
           <h3 className="white-text">headlines</h3>
           <h4

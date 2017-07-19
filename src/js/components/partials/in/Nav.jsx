@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import HeadlineAction from '../../../actions/HeadlineAction';
 import SideBar from './SideBar.jsx';
@@ -74,7 +73,8 @@ class Nav extends React.Component {
    */
   logout() {
     localStorage.removeItem('userProfile');
-    this.props.history.replace('/');
+    this.props.location.pathname = '/';
+    location.reload();
   }
 
   render() {
@@ -116,10 +116,5 @@ class Nav extends React.Component {
     );
   }
 }
-
-Nav.propTypes = {
-  history: PropTypes.object,
-  user: PropTypes.string
-};
 
 export default withRouter(Nav);

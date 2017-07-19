@@ -1,5 +1,7 @@
-[![Coverage Status](https://coveralls.io/repos/github/tolupatrick004/headlines/badge.svg?branch=deployment)](https://coveralls.io/github/tolupatrick004/headlines?branch=deployment)
-[![Build Status](https://travis-ci.org/tolupatrick004/headlines.svg?branch=deployment)](https://travis-ci.org/tolupatrick004/headlines)
+[![Coverage Status](https://coveralls.io/repos/github/tolupatrick004/headlines/badge.svg?branch=deployment)](https://coveralls.io/github/tolupatrick004/headlines?branch=feature/logInRefactor)
+[![Build Status](https://travis-ci.org/tolupatrick004/headlines.svg?branch=feature/logInRefactor)](https://travis-ci.org/tolupatrick004/headlines)
+[![Code Climate](https://codeclimate.com/github/tolupatrick004/headlines/badges/gpa.svg)](https://codeclimate.com/github/tolupatrick004/headlines)
+
 ## Introduction
 
 Headlines is a news feed web app that retrieves news articles from over 60 different new sources, keeping you updated on recent happenings from different segments such as technology, business, economy, entertainment, sports etc.

@@ -69,26 +69,12 @@ exports[`<Nav /> should render a snapshot of the Nav Component 1`] = `
             </li>
             <li
               className=""
-            >
-              <a
-                className="subheader"
-                href="#!"
-              >
-                Favourites
-              </a>
-            </li>
-            <li
-              className=""
+              onClick={[Function]}
             >
               <a
                 className=""
-                href="/favourites"
+                href="#!"
               >
-                <i
-                  className="material-icons"
-                >
-                  cloud
-                </i>
                 View Favourites
               </a>
             </li>
@@ -99,26 +85,6 @@ exports[`<Nav /> should render a snapshot of the Nav Component 1`] = `
                 className=""
                 href="#!"
               />
-            </li>
-            <li
-              className=""
-            >
-              <a
-                className="subheader"
-                href="#!"
-              >
-                Recently Viewed Favourites
-              </a>
-            </li>
-            <li
-              className=""
-            >
-              <a
-                className="waves-effect"
-                href="#!third"
-              >
-                Still Random Post
-              </a>
             </li>
           </ul>
         </span>
@@ -237,26 +203,12 @@ exports[`<Nav /> should render a snapshot of the NavBar Component 1`] = `
             </li>
             <li
               className=""
-            >
-              <a
-                className="subheader"
-                href="#!"
-              >
-                Favourites
-              </a>
-            </li>
-            <li
-              className=""
+              onClick={[Function]}
             >
               <a
                 className=""
-                href="/favourites"
+                href="#!"
               >
-                <i
-                  className="material-icons"
-                >
-                  cloud
-                </i>
                 View Favourites
               </a>
             </li>
@@ -267,26 +219,6 @@ exports[`<Nav /> should render a snapshot of the NavBar Component 1`] = `
                 className=""
                 href="#!"
               />
-            </li>
-            <li
-              className=""
-            >
-              <a
-                className="subheader"
-                href="#!"
-              >
-                Recently Viewed Favourites
-              </a>
-            </li>
-            <li
-              className=""
-            >
-              <a
-                className="waves-effect"
-                href="#!third"
-              >
-                Still Random Post
-              </a>
             </li>
           </ul>
         </span>

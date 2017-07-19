@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import renderHTML from 'react-render-html';
 import NavBar from '../partials/in/NavBar.jsx';
 import Spinner from '../partials/in/Spinner.jsx';
@@ -39,15 +38,11 @@ class ArticleDetailsPage extends React.Component {
 
   render() {
     const user = localStorage.getItem('userProfile');
-    if (!user) {
-      return (
-        <Redirect to="/"/>
-      );
-    }
     const { fullArticle } = this.state;
     return (
       <section>
-        <NavBar user={user} /> {(fullArticle)
+        <NavBar user={user} />
+        {(fullArticle)
           ?
           <div>
             <div className="container">

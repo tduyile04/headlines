@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import { Pagination } from 'react-materialize';
 import Nav from './partials/in/Nav.jsx';
 import Spinner from './partials/in/Spinner.jsx';
@@ -70,11 +69,6 @@ class App extends React.Component {
     const displayedSources = allSources.slice(start, end);
 
     const user = localStorage.getItem('userProfile');
-    if (!user) {
-      return (
-        <Redirect to="/"/>
-      );
-    }
     return (
       <div>
         <section className="page-wrap">
@@ -96,12 +90,12 @@ class App extends React.Component {
           <div className="center-align">
             {
               !!allSources && (
-                  <Pagination
-                    className = "white-text"
-                    items={Math.ceil(sources.length / sourcePerPage)}
-                    activePage={currentPage}
-                    onSelect={current => this.changePage(current)}
-                  />
+                <Pagination
+                  className = "white-text"
+                  items={Math.ceil(sources.length / sourcePerPage)}
+                  activePage={currentPage}
+                  onSelect={current => this.changePage(current)}
+                />
               )
             }
           </div>
