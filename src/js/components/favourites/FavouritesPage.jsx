@@ -30,12 +30,12 @@ function FavouritesPage() {
       {
         !Favourites && (
           <div>
-            <h4 className="white-text">No Favourites Added yet</h4>
+            <h4 className="white-text center-align">No Favourites Added yet</h4>
           </div>
         )
       }
       {
-        Favourites.map((favourite, index) => {
+        (Favourites) && Favourites.map((favourite, index) => {
           return <Favourite key={index} favourite={favourite} />;
         }, this)
       }
