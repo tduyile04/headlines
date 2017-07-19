@@ -4,7 +4,6 @@
   "description": "A modern rss feeds that allows you view headlines from different news sources",
   "main": "index.js",
   "scripts": {
-    "postinstall": "NODE_ENV=production webpack --config webpack.prod.config.js --progress --colors",
     "dev": "webpack-dev-server --config webpack.config.js --inline --content-base ./src --hot",
     "start": "NODE_ENV=production node server.js",
     "test": "jest -u"
