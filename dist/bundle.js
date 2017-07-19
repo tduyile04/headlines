@@ -17744,10 +17744,6 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
 var _reactRouterDom = __webpack_require__(18);
 
 var _SideBar = __webpack_require__(226);
@@ -29635,7 +29631,7 @@ function SideBar(_ref2) {
     userObject = JSON.parse(user);
   } catch (e) {
     userObject = {
-      image: '../../../../images/jared.jpg',
+      image: '../../../../images/login2.jpg',
       name: 'anonymous',
       email: 'anonymous@unknown.com'
     };
@@ -62726,7 +62722,6 @@ var ArticleDetailsPage = function (_React$Component) {
         'section',
         null,
         _react2.default.createElement(_NavBar2.default, { user: user }),
-        ' ',
         fullArticle ? _react2.default.createElement(
           'div',
           null,
@@ -62966,7 +62961,7 @@ var _ref = _react2.default.createElement(
   null,
   _react2.default.createElement(
     'h4',
-    { className: 'white-text' },
+    { className: 'white-text center-align' },
     'No Favourites Added yet'
   )
 );
@@ -62998,7 +62993,7 @@ function FavouritesPage() {
       'div',
       { className: 'row' },
       !Favourites && _ref,
-      Favourites.map(function (favourite, index) {
+      Favourites && Favourites.map(function (favourite, index) {
         return _react2.default.createElement(_Favourite2.default, { key: index, favourite: favourite });
       }, this)
     ),
@@ -63160,10 +63155,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRouterDom = __webpack_require__(18);
 
@@ -63506,10 +63497,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(18);
 
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
 var _HeadlineAction = __webpack_require__(63);
 
 var _HeadlineAction2 = _interopRequireDefault(_HeadlineAction);
@@ -63622,10 +63609,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRouterDom = __webpack_require__(18);
 
