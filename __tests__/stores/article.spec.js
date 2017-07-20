@@ -33,13 +33,13 @@ describe('Headline Articles Store', () => {
     expect(HeadlineArticleStore.getAllArticles()).toEqual(mockArticleAPI);
   });
 
-  it('should call the function that fetches articles from api', () => {
+  it('should call get articles when given the right action type', () => {
     const action = { type: 'GET_ARTICLES', payload: mockArticleAPI.articles };
     HeadlineArticleStore.handleActions(action);
     expect(HeadlineArticleStore.articles.length).not.toBe(0);
   });
 
-  it('shouldn\'t call the function that fetches articles from api', () => {
+  it('shouldn\'t call get articles with a wrong action type', () => {
     const action = { type: 'DON\'T_CALL', payload: mockArticleAPI.articles };
     HeadlineArticleStore.handleActions(action);
     expect(HeadlineArticleStore.articles.length).toBe(0);

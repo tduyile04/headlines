@@ -24,7 +24,7 @@ function FavouritesPage() {
         className="orange-text text-accent-1"
         style={{ paddingLeft: '10px' }}
       >
-        Archives
+        Favourites
       </h4>
       <div className="row">
       {

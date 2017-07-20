@@ -5,8 +5,8 @@ import renderer from 'react-test-renderer';
 import Nav from '../../src/js/components/partials/in/Nav.jsx';
 import NavBar from '../../src/js/components/partials/in/NavBar.jsx';
 
-describe('<Nav />', () => {
-  it('should render 1 <Nav />', () => {
+describe('The Nav component', () => {
+  it('should render correctly every time', () => {
     const wrapper = shallow(<Nav />);
     expect(wrapper).toHaveLength(1);
   });
@@ -20,7 +20,7 @@ describe('<Nav />', () => {
     const wrapper = shallow(<Nav user={user} />);
     expect(wrapper.instance().props.user).toBe(user);
   });
-  it('should render a snapshot of the Nav Component', () => {
+  it('should render the Nav component correctly every time', () => {
     const userObject = {
       name: 'jack doe',
       email: 'jackdoe@any.com',
@@ -33,7 +33,7 @@ describe('<Nav />', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('should render a snapshot of the NavBar Component', () => {
+  it('should render the NavBar component correctly every time', () => {
     const userObject = {
       name: 'jack doe',
       email: 'jackdoe@any.com',

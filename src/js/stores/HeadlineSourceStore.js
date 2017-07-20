@@ -47,6 +47,9 @@ class HeadlineSourceStore extends EventEmitter {
         .trim()
         .indexOf(query.toLowerCase().trim()) !== -1;
     });
+    if (this.sources.length === 0) {
+      this.sources = 'No sources match this query';
+    }
     return this.sources;
   }
 

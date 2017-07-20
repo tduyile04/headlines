@@ -6,7 +6,7 @@ import Favourite from '../../src/js/components/partials/in/Favourite.jsx';
 import FavouritesPage from
 '../../src/js/components/favourites/FavouritesPage.jsx';
 
-describe('<Favourite />', () => {
+describe('The Favourite component', () => {
   beforeEach(() => {
     const data = [{
       title: 'harry porter 10',
@@ -19,11 +19,11 @@ describe('<Favourite />', () => {
     const wrapper = shallow(<Favourite />);
     expect(wrapper).toMatchSnapshot();
   });
-  it('should render the same <FavouritesPage /> each time', () => {
+  it('should render the same FavouritesPage component every time', () => {
     const wrapper = shallow(<FavouritesPage />);
     expect(wrapper).toMatchSnapshot();
   });
-  it('should render the same <Favourite />', () => {
+  it('should render the same Favourite component every time', () => {
     const favourite = {
       title: 'random title',
       description: 'a random description',

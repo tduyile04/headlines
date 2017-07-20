@@ -37,9 +37,7 @@ Headlines is a news feed web app that retrieves news articles from over 60 diffe
 
 ## Upgrades to be made
 
-- Multiple log in options       
-- Articles can be saved and added to favourites        
-- Articles added to favourites can be shared on social media.     
+- Multiple log in options           
 - Making headlines a progressive web app
 
 ## Contribution

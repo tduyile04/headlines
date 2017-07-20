@@ -105,7 +105,7 @@ exports[`<Favourite /> should render the same <Favourite /> 1`] = `
             className="btn right blue lighten-1"
             onClick={[Function]}
           >
-            View Articles
+            View Article
           </button>
         </div>
       </div>
@@ -134,7 +134,7 @@ ShallowWrapper {
               }
         }
     >
-        Archives
+        Favourites
     </h4>
     <div
         className="row"
@@ -164,7 +164,7 @@ ShallowWrapper {
                       }
             }
       >
-            Archives
+            Favourites
       </h4>
       <div
             className="row"
@@ -228,7 +228,7 @@ ShallowWrapper {
                                       }
                     }
           >
-                    Archives
+                    Favourites
           </h4>
           <div
                     className="row"
@@ -258,7 +258,7 @@ ShallowWrapper {
                                       }
                     }
           >
-                    Archives
+                    Favourites
           </h4>
           <div
                     className="row"

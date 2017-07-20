@@ -9,8 +9,8 @@ import ArticleDetailsPage from
 '../../src/js/components/articles/ArticleDetailsPage.jsx';
 import localStore from '../../src/__mock__/localStorageMock';
 
-describe('<Article />', () => {
-  xit('should render 1 <ArticlesPage />', () => {
+describe('The Article parent component', () => {
+  xit('should render the ArticlesPage component correctly each render', () => {
     const history = {
       location: {
         pathname: 'https://localhost:8080/cnn/top'
@@ -24,14 +24,14 @@ describe('<Article />', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('should render 1 <Article />', () => {
+  it('should render the Article component correctly', () => {
     const article = mockArticles.articles[0];
     const tree = renderer.create(
       <MemoryRouter><Article article={article} /></MemoryRouter>
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('should render 1 <ArticlePage />', () => {
+  it('should render the ArticlePage component correctly', () => {
     const history = {
       location: {
         pathname: 'https://localhost:8080/cnn/top'
@@ -40,7 +40,7 @@ describe('<Article />', () => {
     const wrapper = shallow(<ArticlesPage history={history}/>);
     expect(wrapper).toMatchSnapshot();
   });
-  it('should render 1 <ArticleDetailsPage />', () => {
+  it('should render ArticleDetailsPage component rightly, every render', () => {
     const user = {
       image: '../../../../images/login2.jpg',
       name: 'anonymous',

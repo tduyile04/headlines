@@ -34,7 +34,7 @@ class Favourite extends React.Component {
                   className="btn right blue lighten-1"
                   onClick={() => this.showFullArticle(favourite.url)}
                 >
-                  View Articles
+                  View Article
                 </button>
               </div>
             </div>

@@ -27,7 +27,6 @@ class Routes extends React.Component {
 
 /**
  * Handles the authentication for the user via its id token
- * @returns {boolean} true if authenticated, false otherwise
  */
   checkAuthentication() {
     if (localStorage.getItem('userProfile')) {
@@ -76,6 +75,3 @@ class Routes extends React.Component {
   }
 }
 export default Routes;
-
-
-
