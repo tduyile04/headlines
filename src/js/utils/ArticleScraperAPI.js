@@ -1,12 +1,10 @@
 import mercuryParser from 'mercury-parser';
 
-// mercury(process.env.MERCURY_API_KEY);
-const mercury = mercuryParser('eCrAtyPmItZCZY1Zi4vqRcbjzeRkQsTrDvzqlCok');
+const mercury = mercuryParser(process.env.MERCURY_API_KEY);
 
 class Scraper {
   static scrapeArticle(url) {
     return mercury.parse(url).then((response) => {
-      console.log(response);
       return {
         title: response.title,
         image: response.lead_image_url,
