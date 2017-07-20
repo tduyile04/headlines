@@ -12,6 +12,7 @@ class Sources extends React.Component {
     return (
       <div className="row">
         {
+          typeof filteredSources === 'object' &&
           filteredSources.map((source) => {
             return <Source key={source.id} source={source} />;
           }, this)

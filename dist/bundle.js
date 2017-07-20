@@ -62505,9 +62505,7 @@ var _ref = _react2.default.createElement(
 
 var _ref2 = _react2.default.createElement(_Spinner2.default, null);
 
-var _ref3 = _react2.default.createElement(_EmptyNotification2.default, null);
-
-var _ref4 = _react2.default.createElement(_Footer2.default, { className: 'page-footer' });
+var _ref3 = _react2.default.createElement(_Footer2.default, { className: 'page-footer' });
 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
@@ -62594,7 +62592,7 @@ var App = function (_React$Component) {
           _react2.default.createElement(_Nav2.default, { user: user }),
           _ref,
           !allSources && _ref2,
-          allSources.length === 0 ? _ref3 : _react2.default.createElement(_SelectedSources2.default, { sources: displayedSources }),
+          allSources.length === 0 ? '' : _react2.default.createElement(_SelectedSources2.default, { sources: displayedSources }),
           _react2.default.createElement(
             'div',
             { className: 'center-align' },
@@ -62608,7 +62606,7 @@ var App = function (_React$Component) {
             })
           )
         ),
-        _ref4
+        _ref3
       );
     }
   }]);
@@ -62987,7 +62985,7 @@ function FavouritesPage() {
         className: 'orange-text text-accent-1',
         style: { paddingLeft: '10px' }
       },
-      'Archives'
+      'Favourites'
     ),
     _react2.default.createElement(
       'div',
@@ -63406,6 +63404,7 @@ var Article = function (_React$Component) {
               _react2.default.createElement(
                 'button',
                 {
+                  title: 'Read Full Article',
                   className: 'btn waves col s6 m6 tooltipped',
                   'data-position': 'top',
                   'data-delay': '50',
@@ -63419,6 +63418,7 @@ var Article = function (_React$Component) {
               _react2.default.createElement(
                 'button',
                 {
+                  title: 'Save Article to Favourites',
                   'data-position': 'top',
                   'data-delay': '50',
                   'data-tooltip': 'Save Articles to Favourites',
@@ -63578,7 +63578,7 @@ var Favourite = function (_React$Component) {
                       return _this2.showFullArticle(favourite.url);
                     }
                   },
-                  'View Articles'
+                  'View Article'
                 )
               )
             )
@@ -63824,15 +63824,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * Displays the sources available for each page
- * @param {any} { sources } all sources retrieved from the api
+ * @param {any} all sources retrieved from the api
  * @returns component showing the paginated sources
  */
+var _ref2 = _react2.default.createElement(
+  'h4',
+  { className: 'white-text center-align' },
+  'No sources found that match this query'
+);
+
 function SelectedSources(_ref) {
   var sources = _ref.sources;
 
   return _react2.default.createElement(
     'div',
     { className: 'row source-container' },
+    typeof sources === 'string' && _ref2,
     _react2.default.createElement(_Sources2.default, { sources: sources })
   );
 }
@@ -64036,6 +64043,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
@@ -64075,7 +64084,7 @@ var Sources = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'row' },
-        filteredSources.map(function (source) {
+        (typeof filteredSources === 'undefined' ? 'undefined' : _typeof(filteredSources)) === 'object' && filteredSources.map(function (source) {
           return _react2.default.createElement(_Source2.default, { key: source.id, source: source });
         }, this)
       );
@@ -64259,7 +64268,6 @@ var Routes = function (_React$Component) {
 
     /**
      * Handles the authentication for the user via its id token
-     * @returns {boolean} true if authenticated, false otherwise
      */
 
   }, {
@@ -64583,6 +64591,9 @@ var HeadlineSourceStore = function (_EventEmitter) {
       this.sources = totalSource.filter(function (source) {
         return source.name.toLowerCase().trim().indexOf(query.toLowerCase().trim()) !== -1;
       });
+      if (this.sources.length === 0) {
+        this.sources = 'No sources match this query';
+      }
       return this.sources;
     }
 

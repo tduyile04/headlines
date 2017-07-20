@@ -244,6 +244,7 @@ exports[`<Article /> should render 1 <Article /> 1`] = `
           data-position="top"
           data-tooltip="Read Full Article"
           onClick={[Function]}
+          title="Read Full Article"
         >
           <i
             className="material-icons"
@@ -257,6 +258,7 @@ exports[`<Article /> should render 1 <Article /> 1`] = `
           data-position="top"
           data-tooltip="Save Articles to Favourites"
           onClick={[Function]}
+          title="Save Article to Favourites"
         >
           <i
             className="material-icons"

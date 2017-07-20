@@ -83,8 +83,8 @@ class App extends React.Component {
                 <Spinner />
               )
             }
-          { allSources.length === 0 ?
-            <EmptyNotification /> :
+          { (allSources.length === 0) ?
+            '' :
             <SelectedSources sources={displayedSources} />
           }
           <div className="center-align">

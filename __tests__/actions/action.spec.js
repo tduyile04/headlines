@@ -25,8 +25,8 @@ describe('When Actions', () => {
     DispatcherMock.restore();
   });
 
-  describe('Action,', () => {
-    describe('get sources and articles method', () => {
+  describe('Action for get sources and articles method, ', () => {
+    describe('Expects that', () => {
       it('getSources is called, ApiGetSources to be called', () => {
         HeadlineAction.getSources();
         expect(ApiGetSources.called).toBeTruthy();

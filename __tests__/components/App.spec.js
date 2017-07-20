@@ -7,10 +7,10 @@ import App from '../../src/js/components/App.jsx';
 describe('<App />', () => {
   const wrapper = shallow(<App />);
 
-  it('should render 1 <App />', () => {
+  it('should render the App component correctly', () => {
     expect(wrapper).toHaveLength(1);
   });
-  xit('should render 1 <ArticleDetailsPage />', () => {
+  xit('should render the same App component for every render', () => {
     const tree = renderer.create(
       <MemoryRouter><App /></MemoryRouter>
     ).toJSON();

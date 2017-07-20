@@ -1,0 +1,12 @@
+engines:
+ duplication:
+   enabled: false
+   config:
+     languages:
+       javascript:
+         mass_threshold: 20
+ratings:
+  paths:
+  - "**.jsx"
+exclude_paths:
+- "__tests__/"

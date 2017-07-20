@@ -4,6 +4,7 @@ import HeadlineSourceStore from '../../src/js/stores/HeadlineSourceStore';
 import HeadlineActionType from '../../src/js/constants/HeadlineActionTypes';
 
 jest.mock('../../src/js/dispatcher/HeadlineDispatcher');
+
 describe('Headline Sources Store', () => {
   let callback;
 
@@ -14,7 +15,7 @@ describe('Headline Sources Store', () => {
 
   const search = {
     type: HeadlineActionType.SEARCH_SOURCES,
-    payload: 'network'
+    payload: 'cnn'
   };
 
   beforeEach(() => {
@@ -24,7 +25,6 @@ describe('Headline Sources Store', () => {
   afterEach(() => {
     HeadlineSourceStore.sources = [];
   });
-
 
   it('should register a call with the dispatcher', () => {
     expect(HeadlineDispatcher.register.mock.calls.length).toBe(1);
@@ -42,7 +42,7 @@ describe('Headline Sources Store', () => {
     callback(sources);
     expect(HeadlineSourceStore
     .getFilteredSource(search.payload).length
-    ).toEqual(0);
+    ).not.toBe(0);
   });
   it('should return the whole data if no query is supplied', () => {
     callback(sources);
@@ -53,14 +53,15 @@ describe('Headline Sources Store', () => {
     HeadlineSourceStore.handleActions(action);
     expect(HeadlineSourceStore.sources.length).not.toBe(0);
   });
-  it('should call the function that fetches sources from api', () => {
+
+  it('should call get full article, if supplied the right action type', () => {
     const action = { type: 'GET_SOURCES', payload: mockSourceAPI.sources };
     HeadlineSourceStore.handleActions(action);
     const newAction = { type: 'SEARCH_SOURCES', payload: 'abc' };
     HeadlineSourceStore.handleActions(newAction);
     expect(HeadlineSourceStore.sources.length).toEqual(1);
   });
-  it('shouldn\'t call the function that fetches articles from api', () => {
+  it('shouldn\'t call fetch sources, if supplied a wrong action type', () => {
     const action = { type: 'DON\'T_CALL', payload: mockSourceAPI.sources };
     HeadlineSourceStore.handleActions(action);
     expect(HeadlineSourceStore.sources.length).toBe(0);

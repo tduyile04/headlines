@@ -160,6 +160,7 @@ class Article extends React.Component {
             <div className="card-action row">
               <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
               <button
+                title="Read Full Article"
                 className="btn waves col s6 m6 tooltipped"
                 data-position="top"
                 data-delay="50"
@@ -169,6 +170,7 @@ class Article extends React.Component {
                 <i className="material-icons">reorder</i>
               </button>
              <button
+                title="Save Article to Favourites"
                 data-position="top"
                 data-delay="50"
                 data-tooltip="Save Articles to Favourites"

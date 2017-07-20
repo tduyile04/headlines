@@ -31,7 +31,7 @@ describe('Headline Scrape Store', () => {
     HeadlineScrapeStore.handleActions(action);
     expect(HeadlineScrapeStore.fullArticle.length).not.toBe(0);
   });
-  it('shouldn\'t call the function that fetches articles from api', () => {
+  it('shouldn\'t call get full articles with a wrong action type', () => {
     const action = { type: 'DON\'T_CALL', payload: 'I am an article' };
     HeadlineScrapeStore.handleActions(action);
     expect(HeadlineScrapeStore.fullArticle.length).toBe(0);
